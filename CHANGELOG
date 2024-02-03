@@ -1,0 +1,24 @@
+v0.1.0:
+    date:2023-12-03
+    changes:
+      - 初始化版本
+        1、组件
+            * Tabs 标签页
+v0.2.0:
+    date:2024-01-14
+    changes:
+      - 新增功能
+        1、权限相关
+            * 微信公众号初始化
+            * 微信小程序《隐私协议》
+        2、API
+            * getLocation 获取地理位置
+            * saveAlbum 保存图片到相册
+            * chooseImage 选择图片
+            * dateFormat 日期格式化
+            * numberFormat 数字格式化
+        3、组件
+            * Form 表单校验
+            * Popup 弹出层
+            * Calendar 日历
+            

@@ -1,0 +1,58 @@
+<header>
+    如何安装和引入？
+</header>
+<h2>
+    安装
+</h2>
+<p>
+    我们使用npm的方式进行发布和管理版本：
+</p>
+<pre>
+npm install --save uni-query
+</pre>
+<h2>
+    引入
+</h2>
+<p>
+    我们推荐使用
+    <span class="special">easycom</span>
+    的方式引入<span class="important">组件</span>：
+</p>
+<pre tag="javascript">
+"easycom": {
+    "autoscan": true,
+    "custom": {
+        "^ui-(.*)": "uni-query/components/$1/index.vue"
+    }
+}
+</pre>
+<p>
+    此外，还需要对<span class="important">API</span>根据不同的vue版本安装：
+</p>
+<h3>
+    vue2.js
+</h3>
+<pre tag="javascript">
+import Vue from 'vue';
+import uniQuery from 'uni-query/libs/index';
+
+Vue.use(uniQuery, options = {});
+</pre>
+<h3>
+    vue3.js+
+</h3>
+<pre tag="javascript">
+import { createApp } from 'vue';
+import uniQuery from 'uni-query/libs/index';
+
+let app = createApp(App);
+app.use(uniQuery, options = {});
+</pre>
+<p>
+    至此，就可以在项目中正常使用了。
+</p>
+<div class="warn">
+    温馨提示：其中
+    <span class="important">options</span>
+    可选，用于配置一些个性化或扩展内容，具体可配置内容，我们将在用到的地方进行说明。
+</div>

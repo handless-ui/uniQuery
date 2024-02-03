@@ -1,0 +1,79 @@
+<header>
+    chooseImage 选择图片
+</header>
+<div class="version">
+    0.2.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="javascript">
+uni.$uniQuery.chooseImage.then(res=> {
+    // 获取成功
+})catch(err=>{
+    // 获取失败
+});
+</pre>
+<p>
+    其中，res的数据格式如下：
+</p>
+<pre tag="javascript">
+// 数组的条目是base64图片地址
+Array&lt;string&gt;
+</pre>
+<h2>
+    权限相关
+</h2>
+<h3>
+    微信公众号
+</h3>
+<p>
+    需要在
+    <span class="important">jsApiList</span>
+    补充如下方法列表：
+</p>
+<pre tag="javascript">
+wx.config({
+    jsApiList: ["chooseImage", "getLocalImgData"]
+})
+</pre>

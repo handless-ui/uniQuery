@@ -1,0 +1,43 @@
+{
+  "name": "uni-query",
+  "version": "0.2.0",
+  "description": "🐠 为uniapp设计的开源组件库，专注最重要的核心组件",
+  "main": "libs/index.js",
+  "scripts": {
+    "offiaccount": "offiaccount-cli --config offiaccount.config.js",
+    "build:demo": "node ./build/index.js",
+    "dev:docs": "devby -s 20000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oi-contrib/uniQuery.git"
+  },
+  "author": {
+    "name": "zxl20070701",
+    "url": "https://zxl20070701.github.io/notebook/home.html"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oi-contrib/uniQuery/issues"
+  },
+  "homepage": "https://oi-contrib.github.io/uniQuery",
+  "keywords": [
+    "uniapp"
+  ],
+  "browserslist": [
+    "Android >= 4.4",
+    "ios >= 9"
+  ],
+  "uni-app": {
+    "scripts": {}
+  },
+  "dependencies": {
+    "vislite": "^0.6.0"
+  },
+  "devDependencies": {
+    "devby": "^0.5.1",
+    "wechat-offiaccount": "^0.1.2",
+    "weixin-js-sdk": "^1.6.5",
+    "zdebug.js": "^0.2.0"
+  }
+}

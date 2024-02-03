@@ -1,0 +1,83 @@
+<header>
+    Calendar 日历
+</header>
+<div class="version">
+    0.2.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+<template>
+    <ui-calendar ref="mycalendar"></ui-calendar>
+</template>
+</pre>
+<p>
+    页面中准备好以后，直接使用open方法即可打开：
+</p>
+<pre tag="javascript">
+this.$refs.mycalendar.open().then((value) => {
+    // value就是用户选择的值
+}).catch((err)=>{
+    // 如果出错或者用户取消了选择
+});
+</pre>
+<p>
+    其中value的格式如下：
+</p>
+<pre tag="javascript">
+{
+    "year": number
+    "month": number
+    "day": number
+}
+</pre>
+<p>
+    此外，open方法可以传递一个参数value，表示<span class="special">当前选中的日期</span>：
+</p>
+<pre tag="javascript">
+this.$refs.mycalendar.open(value);
+</pre>
+<div class="warn">
+    特别说明：为什么<span class="special">当前选中的日期</span>由open传递而不是直接通过组件属性配置？这是为了提高组件的复用度，保证多个输入可以复用一个日历组件（别的地方类似设计理由相同，不再赘述）。
+</div>

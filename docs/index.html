@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.png">
+    <title>uniQuery - 为uniapp设计的开源组件库，专注最重要的核心组件</title>
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <script src="./js/system.js"></script>
+    <script src="./js/shader.js"></script>
+</head>
+
+<body>
+    <!-- ✘✔ -->
+
+    <!-- 用例 -->
+    <div id="examples">
+        <iframe id="example-iframe-id"></iframe>
+    </div>
+
+    <!-- 导航 -->
+    <div class="head">
+        <h2>
+            uniQuery
+            <span id="version" class="version-tips"></span>
+        </h2>
+        <nav>
+            <span active="no" id="guide-nav-id" onclick="changeNav('guide')">
+                指南
+            </span>
+            <span active="no" id="component-nav-id" onclick="changeNav('component')">
+                组件
+            </span>
+            <span active="no" id="api-nav-id" onclick="changeNav('api')">
+                API
+            </span>
+            <a target="_blank" href="https://github.com/oi-contrib/uniQuery">
+                GitHub
+            </a>
+        </nav>
+    </div>
+
+    <div class="menu" id="guide-id">
+        <h3>
+            指南
+        </h3>
+        <ul>
+            <li>
+                <span onclick="changeMenu('install')">
+                    如何安装和引入？
+                </span>
+            </li>
+            <li>
+                <span class="sub-title">
+                    平台差异补充
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('offiaccount')">
+                            微信公众号
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('weixin')">
+                            微信小程序
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu" id="component-id">
+        <h3>
+            组件
+        </h3>
+        <ul>
+            <li>
+                <span class="sub-title">
+                    功能组件
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('form')">
+                            Form 表单校验
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('popup')">
+                            Popup 弹出层
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="sub-title">
+                    UI组件
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('tabs')">
+                            Tabs 标签页
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('calendar')">
+                            Calendar 日历
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu" id="api-id">
+        <h3>
+            API
+        </h3>
+        <ul>
+            <li>
+                <span class="sub-title">
+                    跨端兼容
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('getLocation')">
+                            getLocation 获取地理位置
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('saveAlbum')">
+                            saveAlbum 保存图片到相册
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('chooseImage')">
+                            chooseImage 选择图片
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="sub-title">
+                    工具类
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('dateFormat')">
+                            dateFormat 日期格式化
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('numberFormat')">
+                            numberFormat 数字格式化
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content" id="content-id"></div>
+
+    <script src="./js/menu.js"></script>
+</body>
+
+</html>

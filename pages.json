@@ -1,0 +1,126 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index",
+			"style": {
+				"navigationBarTitleText": "uniQuery 组件库项目"
+			}
+		},
+		{
+			"path": "pages/component",
+			"style": {
+				"navigationBarTitleText": "uniQuery 组件"
+			}
+		},
+		{
+			"path": "pages/api",
+			"style": {
+				"navigationBarTitleText": "uniQuery 接口"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [
+			{
+				"pagePath": "pages/index",
+				"iconPath": "static/home.png",
+				"selectedIconPath": "static/home_active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/component",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/component_active.png",
+				"text": "组件"
+			},
+			{
+				"pagePath": "pages/api",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/api_active.png",
+				"text": "接口"
+			}
+		]
+	},
+	"subPackages": [
+		{
+			"root": "pages/component",
+			"pages": [
+				{
+					"path": "form/index",
+					"style": {
+						"navigationBarTitleText": "Form 表单校验"
+					}
+				},
+				{
+					"path": "popup/index",
+					"style": {
+						"navigationBarTitleText": "Popup 弹出层"
+					}
+				},
+				{
+					"path": "tabs/index",
+					"style": {
+						"navigationBarTitleText": "Tabs 标签页"
+					}
+				},
+				{
+					"path": "calendar/index",
+					"style": {
+						"navigationBarTitleText": "Calendar 日历"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/api",
+			"pages": [
+				{
+					"path": "getLocation/index",
+					"style": {
+						"navigationBarTitleText": "getLocation 获取地理位置"
+					}
+				},
+				{
+					"path": "saveAlbum/index",
+					"style": {
+						"navigationBarTitleText": "saveAlbum 保存图片到相册"
+					}
+				},
+				{
+					"path": "chooseImage/index",
+					"style": {
+						"navigationBarTitleText": "chooseImage 选择图片"
+					}
+				},
+				{
+					"path": "dateFormat/index",
+					"style": {
+						"navigationBarTitleText": "dateFormat 日期格式化"
+					}
+				},
+				{
+					"path": "numberFormat/index",
+					"style": {
+						"navigationBarTitleText": "numberFormat 数字格式化"
+					}
+				}
+			]
+		}
+	],
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^ui-(.*)": "@/components/$1/index.vue"
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uniQuery",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#ffffff"
+	}
+}

@@ -1,0 +1,101 @@
+<header>
+    getLocation 获取地理位置
+</header>
+<div class="version">
+    0.2.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="javascript">
+uni.$uniQuery.getLocation.then(res=> {
+    // 获取成功
+})catch(err=>{
+    // 获取失败
+});
+</pre>
+<p>
+    其中，res的数据格式如下：
+</p>
+<pre tag="javascript">
+{
+    longitude: number // 经度
+    latitude: number // 纬度
+}
+</pre>
+<h2>
+    权限相关
+</h2>
+<h3>
+    微信小程序
+</h3>
+<p>
+    需要提前在
+    <span class="special">manifest.json</span>
+    中进行权限申请的注册：
+</p>
+<pre tag="javascript">
+"mp-weixin": {
+    "permission": {
+        "scope.userLocation": {
+            "desc": "您的位置信息将用于小程序页面"
+        }
+    },
+    "requiredPrivateInfos": [
+        "getLocation"
+    ]
+}
+</pre>
+<h3>
+    微信公众号
+</h3>
+<p>
+    需要在
+    <span class="important">jsApiList</span>
+    补充如下方法列表：
+</p>
+<pre tag="javascript">
+wx.config({
+    jsApiList: ["getLocation"]
+})
+</pre>

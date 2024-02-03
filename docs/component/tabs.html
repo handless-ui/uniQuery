@@ -1,0 +1,183 @@
+<header>
+    Tabs 标签页
+</header>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+<ui-tabs :list="list" @change="change"></ui-tabs>
+</pre>
+<pre tag="javascript">
+export default {
+    data() {
+        return {
+            list: [
+                "关注", "推荐", "电影", "电视剧", "小视频", "游戏", "校园", "影视"
+            ]
+        };
+    },
+    methods: {
+        change(item) {
+            console.log(item);
+        }
+    }
+};
+</pre>
+<p>
+    比如点击<span class="special">"推荐"</span>的时候，打印内容就是：
+</p>
+<pre tag="javascript">
+{
+    index: 1, 
+    value: "推荐"
+}
+</pre>
+<h2>
+    配置项
+</h2>
+<h3>
+    Tabs Attributes
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                index
+            </td>
+            <td>
+                初始化选中序号
+            </td>
+            <td>
+                number
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                list
+            </td>
+            <td>
+                列表内容
+            </td>
+            <td>
+                Array&lt;string&gt;
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+                例如：["关注", "推荐", "电影"]
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>
+    Tabs Events
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                名称
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                参数
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                change
+            </td>
+            <td>
+                初始化或用户点击切换选中条目的时候触发
+            </td>
+            <td>
+                { index: number, value: string }
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

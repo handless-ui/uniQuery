@@ -1,0 +1,30 @@
+<header>
+    微信公众号
+</header>
+<p>
+    如果使用的项目需要对微信公众号进行支持，你还需要安装要求配置好相关环境：
+</p>
+<pre tag="javascript">
+// #ifdef H5
+import wx from 'weixin-js-sdk';
+
+wx.config({
+    debug: true,
+    appId: "",
+    timestamp: "",
+    nonceStr: "",
+    signature: "",
+    jsApiList: []
+});
+
+window.wx = wx;
+// #endif
+</pre>
+<p>
+    如何在本地开发环境下，快速完成上述配置（无需注册公众号等），可以参考
+    <a href="https://github.com/fragement-contrib/WeChat-offiaccount" target="_blank">WeChat-offiaccount</a>
+    中的说明。
+</p>
+<div class="warn">
+    特别说明：上述参数<span class="important">jsApiList</span>表示接口列表，微信公众号需要调用的接口方法都需要在其中添加，具体组件API如果涉及到了，我们会特别指出。
+</div>

@@ -1,0 +1,151 @@
+<header>
+    Form 表单校验
+</header>
+<div class="version">
+    0.2.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<p>
+    首先，你需要配置表单校验的规则（其中<span class="important">options</span>就是初始化的时候传递的，具体可以查看
+    <a href="#/guide/install" target="_blank">如何安装和引入？</a>
+    一节）：
+</p>
+<pre tag="javascript">
+options = {
+    validate:{
+        // 必输，如果有值就返回true，否则false
+        // 第一个参数value表示的值输入框的值
+        // 第二个参数param表示的是规则使用时设置的值，比如这里的 “required: true” 那么就是true
+        required:(value, param)=>{
+            return !!value;
+        },
+
+        // 手机号码
+        phone: (value, param) => {
+            return !value || /^\d{11}$/.test(value);
+        }
+    }
+}
+</pre>
+<p>
+    上面是定义规则的例子（更多规则定义例子可以查看
+    <a href="https://github.com/oi-contrib/uniQuery/blob/master/validate.js" target="_blank">validate.js</a>
+    文件），使用的例子：
+</p>
+<pre tag="html">
+<template>
+    <ui-form ref='myform' :rules='rules' :value="params">
+        <ui-form-item prop='name'>
+            <view class="input-item">
+                <view class="label">
+                    姓名
+                </view>
+                <input v-model="params.name" placeholder="请输入您的姓名" />
+            </view>
+        </ui-form-item>
+        <ui-form-item prop='phone'>
+            <view class="input-item">
+                <view class="label">
+                    联系方式
+                </view>
+                <input v-model="params.phone" placeholder="请输入您的手机号" />
+            </view>
+        </ui-form-item>
+        <button @click="doSubmit">提交</button>
+    </ui-form>
+</template>
+
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+                // 提交参数
+                params: {
+                    name: "",
+                    phone: ""
+                },
+
+                // 表单校验规则
+                rules: {
+                    name: [{
+                        required: true,
+                        message: "请输入姓名"
+                    }],
+                    phone: [{
+                        required: true,
+                        message: "请输入手机号"
+                    }, {
+                        phone: true,
+                        message: "请输入正确的手机号"
+                    }]
+                }
+            }
+        },
+        methods: {
+            doSubmit() {
+                this.$refs.myform.submit()
+
+                    // 如果表单合法
+                    .then(() => {
+                        uni.showToast({
+                            title: "表单合法了～",
+                            icon: 'none',
+                            duration: 2000
+                        });
+                    })
+
+                    // 非法的话提出提示
+                    .catch(error => {
+                        uni.showToast({
+                            title: error,
+                            icon: 'none',
+                            duration: 2000
+                        });
+                    });
+            }
+        }
+    }
+&lt;/script&gt;
+</pre>
