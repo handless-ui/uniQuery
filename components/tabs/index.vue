@@ -1,24 +1,18 @@
 <template>
   <view class="tabs-container">
     <!-- 列表滚动内容 -->
-    <scroll-view
-      scroll-with-animation
-      :show-scrollbar="false"
-      :scroll-left="scrollLeft"
-      :scroll-x="true"
-      class="tabs-view"
-    >
+    <scroll-view scroll-with-animation :show-scrollbar="false" :scroll-left="scrollLeft" :scroll-x="true"
+      class="tabs-view">
       <!-- 一个个条目 -->
-      <view
-        @click="doit(index)"
-        :class="'tabs-view-item' + (current == index ? ' active' : '')"
-        v-for="(item, index) in list"
-        :key="index"
-      >
+      <view @click="doit(index)" :class="'tabs-view-item' + (current == index ? ' active' : '')" :style="[{
+        color: current == index ? activeColor : color
+      }]" v-for="(item, index) in list" :key="index">
         <!-- 默认内容 -->
         <view class="content">
           {{ item }}
-          <view class="line"></view>
+          <view class="line" :style="[{
+            backgroundColor: activeColor
+          }]"></view>
         </view>
       </view>
     </scroll-view>
@@ -44,6 +38,14 @@ export default {
         return true;
       },
     },
+    activeColor: {
+      type: String,
+      default: "#007aff"
+    },
+    color: {
+      type: String,
+      default: "#333333"
+    }
   },
   data() {
     return {
@@ -107,20 +109,21 @@ export default {
     display: inline-block;
     padding: 0 10rpx;
     line-height: 50rpx;
-    color: #333;
+    // color: #333;
     font-weight: 400;
     font-size: 28rpx;
 
     &.active {
-      color: #007aff;
-      & > .content {
-        & > .line {
+
+      // color: #007aff;
+      &>.content {
+        &>.line {
           width: 40rpx;
           height: 6rpx;
           margin-bottom: 8rpx;
           margin-left: calc(50% - 20rpx);
           border-radius: 6rpx;
-          background-color: #007aff;
+          // background-color: #007aff;
         }
       }
     }

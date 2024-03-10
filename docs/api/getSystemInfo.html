@@ -1,0 +1,72 @@
+<header>
+    getSystemInfo 获取平台信息
+</header>
+<div class="version">
+    0.3.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="javascript">
+uni.$uniQuery.getSystemInfo().then(res=> {
+    // 获取成功
+}).catch(err=>{
+    // 获取失败
+});
+</pre>
+<p>
+    其中，res的数据格式如下：
+</p>
+<pre tag="javascript">
+{
+    // 状态栏
+    statusBar: {
+        height: number
+    },
+
+    // 标题栏
+    title: {
+        height: number
+    }
+}
+</pre>

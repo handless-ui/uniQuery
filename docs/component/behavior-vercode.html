@@ -1,0 +1,133 @@
+<header>
+    BehaviorVercode 行为验证码
+</header>
+<div class="version">
+    0.3.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+&lt;ui-behavior-vercode ref="myvercode" 
+    bgicon="/static/images/nanjing.jpeg" righticon="/static/images/toRight.png"
+&gt;&lt;/ui-behavior-vercode&gt;
+</pre>
+<p>
+    页面中准备好以后，直接使用open方法即可打开：
+</p>
+<pre tag="javascript">
+this.$refs.myvercode.open().then((value) => {
+    // 如果校验通过
+}).catch((err)=>{
+    // 如果校验未通过
+});
+</pre>
+<h3>
+    BehaviorVercode Attributes
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                bgicon
+            </td>
+            <td>
+                背景图片
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+                例子中图片大小为：295px*111px
+            </td>
+        </tr>
+        <tr>
+            <td>
+                righticon
+            </td>
+            <td>
+                滑动箭头图片
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+                例子中图片大小为：40px*40px
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -27,3 +27,4 @@ offiaccount.config.js
 access_token.json
 jsapi_ticket.json
 validate.js
+jsconfig.json

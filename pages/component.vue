@@ -7,6 +7,11 @@
     <!-- UI组件 -->
     <view class="btn" @click="goto('tabs')">Tabs 标签页</view>
     <view class="btn" @click="goto('calendar')">Calendar 日历</view>
+
+    <!-- 业务组件 -->
+    <view class="btn" @click="goto('behavior-vercode')">BehaviorVercode 行为验证码</view>
+    <view class="btn" @click="goto('title')">Title 标题头</view>
+
   </view>
 </template>
 

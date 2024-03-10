@@ -5,6 +5,9 @@
 
     <view class="example-title"> 默认选中： </view>
     <ui-tabs :list="list" :index="7" @change="change"></ui-tabs>
+
+    <view class="example-title"> 改变颜色： </view>
+    <ui-tabs :list="list" :index="3" @change="change" color="pink" active-color="red"></ui-tabs>
   </view>
 </template>
 

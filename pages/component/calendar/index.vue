@@ -42,6 +42,11 @@ export default {
       value2: null,
     };
   },
+  onShow() {
+    setTimeout(() => {
+      this.doit('value1');
+    }, 500);
+  },
   methods: {
     doit(valueName) {
       this.$refs.mycalendar

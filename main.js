@@ -8,7 +8,7 @@ import uniQuery from '@/libs/index';
 import Zdebug from 'zdebug.js';
 Zdebug();
 
-import wx from 'weixin-js-sdk';
+import wx from 'wechat-offiaccount';
 
 // 微信公众号
 if (/MicroMessenger/i.test(window.navigator.userAgent)) {

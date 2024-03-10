@@ -19,6 +19,11 @@ export default {
       show: false,
     };
   },
+  onShow() {
+    setTimeout(() => {
+      this.show = true;
+    }, 500);
+  },
   methods: {
     doit() {
       console.log("点击了popup");

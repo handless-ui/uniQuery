@@ -1,6 +1,12 @@
 <template>
   <view class="container">
-    <!-- 跨端兼容 -->
+
+    <!-- 基础 -->
+    <view class="btn" @click="goto('getSystemInfo')">
+      getSystemInfo 获取平台信息
+    </view>
+
+    <!-- 跨端接口 -->
     <view class="btn" @click="goto('getLocation')">
       getLocation 获取地理位置
     </view>
@@ -14,6 +20,7 @@
     <view class="btn" @click="goto('numberFormat')">
       numberFormat 数字格式化
     </view>
+
   </view>
 </template>
 
@@ -32,10 +39,12 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 20rpx;
+
   .btn {
     margin: 20rpx;
     font-weight: 200;
     font-size: 28rpx;
+
     &::before {
       display: inline-block;
       content: " ";

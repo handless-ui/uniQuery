@@ -72,6 +72,19 @@
 					"style": {
 						"navigationBarTitleText": "Calendar 日历"
 					}
+				},
+				{
+					"path": "title/index",
+					"style": {
+						"navigationBarTitleText": "Title 标题头",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "behavior-vercode/index",
+					"style": {
+						"navigationBarTitleText": "BehaviorVercode 行为验证码"
+					}
 				}
 			]
 		},
@@ -106,6 +119,11 @@
 					"path": "numberFormat/index",
 					"style": {
 						"navigationBarTitleText": "numberFormat 数字格式化"
+					}
+				},{
+					"path": "getSystemInfo/index",
+					"style": {
+						"navigationBarTitleText": "getSystemInfo 获取平台信息"
 					}
 				}
 			]

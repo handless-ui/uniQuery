@@ -21,4 +21,20 @@ v0.2.0:
             * Form 表单校验
             * Popup 弹出层
             * Calendar 日历
+v0.3.0:
+    date:2024-03-10
+    changes:
+      - 优化改造
+        1、组件
+            * Tabs 标签页
+              ~ 选中和未选中状态颜色可配置
+        2、添加types类型定义
+            * 把柄uni.$uniQuery类型定义
+            * 组件ref补充类型定义
+      - 新增功能
+        1、API
+            * getSystemInfo 获取平台信息
+        2、组件
+            * Title 标题头
+            * BehaviorVercode 行为验证码
             

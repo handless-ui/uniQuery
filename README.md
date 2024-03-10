@@ -19,7 +19,7 @@
 
 # uniQuery
 
-```uniQuery```是一个使用为```uniapp```开发的组件库。官网地址：[https://oi-contrib.github.io/uniQuery](https://oi-contrib.github.io/uniQuery)
+```uniQuery```是一个为```uniapp```开发的组件库，同时包括各种使用功能。官网地址：[https://oi-contrib.github.io/uniQuery](https://oi-contrib.github.io/uniQuery)
 
 ## 简介
 
@@ -35,7 +35,7 @@
 
 我们提供了[日历](https://oi-contrib.github.io/uniQuery/#/component/calendar)、[tabs](https://oi-contrib.github.io/uniQuery/#/component/tabs)、[表单校验](https://oi-contrib.github.io/uniQuery/#/component/form)等实用的组件：
 
-<img src="https://oi-contrib.github.io/uniQuery/images/calendar-review.png" width="300"/>
+<img src="https://oi-contrib.github.io/uniQuery/images/component-review.png" width="600"/>
 
 ### 接口API
 

@@ -1,3 +1,4 @@
+import getSystemInfo from "./getSystemInfo";
 import getLocation from "./getLocation";
 import saveAlbum from "./saveAlbum";
 import chooseImage from "./chooseImage";
@@ -6,6 +7,7 @@ import numberFormat from "./numberFormat";
 
 // API
 uni.$uniQuery = {
+	getSystemInfo,
 	getLocation,
 	saveAlbum,
 	chooseImage,
