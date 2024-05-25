@@ -42,7 +42,7 @@ npm run offiaccount
 然后执行用例同步：
 
 ```shell
-npm run build:demo
+npm run build:docs
 ```
 
 最后启动文档：
