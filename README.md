@@ -17,6 +17,8 @@
     </a>
 </p>
 
+<img src="https://nodei.co/npm/uni-query.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM">
+
 # uniQuery
 
 ```uniQuery```是一个为```uniapp```开发的组件库，同时包括各种使用功能。官网地址：[https://oi-contrib.github.io/uniQuery](https://oi-contrib.github.io/uniQuery)

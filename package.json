@@ -1,10 +1,11 @@
 {
   "name": "uni-query",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "🐠 为uniapp设计的开源组件库，专注最重要的核心组件",
   "main": "libs/index.js",
   "typings": "./types/index.d.ts",
   "scripts": {
+    "init": "npm install && devby --copy ./node_modules/pageby/dist/pageby.min.js ./docs/js/min/pageby.min.js",
     "offiaccount": "offiaccount-cli --config offiaccount.config.js",
     "dev:docs": "devby -s 20000",
     "build:docs": "node ./build/index.js"
@@ -33,11 +34,12 @@
     "scripts": {}
   },
   "dependencies": {
-    "vislite": "^0.8.0"
+    "vislite": "^1.0.0-next.5"
   },
   "devDependencies": {
     "devby": "^0.5.1",
-    "wechat-offiaccount": "^0.2.0-alpha.0",
+    "pageby": "^0.1.0",
+    "wechat-offiaccount": "^0.2.0",
     "zdebug.js": "^0.2.0"
   }
 }

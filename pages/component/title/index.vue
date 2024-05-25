@@ -1,6 +1,6 @@
 <template>
     <view>
-        <ui-title ref="mytitle" title="标题" backicon="/static/images/backBlack.png"></ui-title>
+        <ui-title ref="mytitle" title="这是标题" backicon="/static/images/backBlack.png"></ui-title>
         <scroll-view scroll-y="true" :style="{
             height: scrollHeight + 'px',
         }">

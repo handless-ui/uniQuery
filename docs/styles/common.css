@@ -326,63 +326,6 @@ body {
     margin: 0 5px;
 }
 
-pre {
-    position: relative;
-    outline: 1px solid #d3d3d4;
-    overflow: auto;
-}
-
-pre:hover {
-    outline-color: black;
-}
-
-pre>.copy-icon {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    background-image: url('../images/copy.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-color: transparent;
-    outline: none;
-    border: none;
-}
-
-.copy-icon[copied] {
-    outline: 1px solid #343848;
-    border-radius: 0 4px 4px 0;
-}
-
-.copy-icon[copied='no'] {
-    outline: 1px solid #ff0000;
-}
-
-.copy-icon[copied]:before {
-    position: absolute;
-    left: -64px;
-    display: block;
-    border-radius: 4px 0 0 4px;
-    width: 64px;
-    height: 32px;
-    line-height: 32px;
-    top: -1px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #343848;
-    white-space: nowrap;
-    content: attr(data-before);
-}
-
-.copy-icon[copied='no']:before {
-    background-color: #ff0000;
-}
-
 .content table>tbody>tr>* {
     border-width: 0 1px 1px 0;
     border-style: solid;

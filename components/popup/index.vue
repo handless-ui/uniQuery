@@ -1,19 +1,15 @@
 <template>
-  <view
-    class="popup-container"
-    :style="[
-      {
-        opacity,
-        display: display ? 'block' : 'none',
-        backgroundColor: mask ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
-      },
-    ]"
-    @click="doit()"
-  >
+  <view class="popup-container" :style="[
+    {
+      opacity,
+      display: display ? 'block' : 'none',
+      backgroundColor: mask ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
+    },
+  ]" @click="doit()">
     <slot />
   </view>
 </template>
-  
+
 <script>
 export default {
   name: "UQPopup",
@@ -61,7 +57,7 @@ export default {
   },
 };
 </script>
-  
+
 <style lang="scss" scoped>
 .popup-container {
   position: fixed;
