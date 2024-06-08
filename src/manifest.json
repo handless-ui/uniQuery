@@ -1,0 +1,59 @@
+{
+  "name": "uniQuery",
+  "appid": "__UNI__F52CB8F",
+  "description": "",
+  "versionName": "2.0.36",
+  "versionCode": 1,
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "wx5eead4fcbf03f9e3",
+    "setting": {
+      "urlCheck": false,
+      "es6": false,
+      "minified": false
+    },
+    "optimization": {
+      "subPackages": true
+    },
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents",
+    "permission": {
+      "scope.userLocation": {
+        "desc": "您的位置信息将用于小程序页面"
+      }
+    },
+    "requiredPrivateInfos": [
+      "getLocation"
+    ],
+    "slotMultipleInstance": true
+  },
+  "mp-alipay": {
+    "usingComponents": true,
+    "styleIsolation": "shared",
+    "slotMultipleInstance": true,
+    "component2": true
+  },
+  "mp-toutiao": {
+    "usingComponents": true
+  },
+  "h5": {
+    "router": {
+      "mode": "hash",
+      "base": "./"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": false
+      }
+    },
+    "sdkConfigs": {
+      "maps": {
+        "qqmap": {
+          "key": ""
+        }
+      }
+    },
+    "domain": ""
+  },
+  "vueVersion": "3"
+}

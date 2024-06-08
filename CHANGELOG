@@ -27,7 +27,7 @@ v0.3.0:
       - 优化改造
         1、组件
             * Tabs 标签页
-              ~ 选中和未选中状态颜色可配置
+              > 选中和未选中状态颜色可配置
         2、添加types类型定义
             * 把柄uni.$uniQuery类型定义
             * 组件ref补充类型定义
@@ -37,4 +37,14 @@ v0.3.0:
         2、组件
             * Title 标题头
             * BehaviorVercode 行为验证码
-            
+v1.0.0:
+    date:2024-06-08
+    changes:
+      - 原v0.x的功能将独立一个分支继续维护：https://github.com/oi-contrib/uniQuery/blob/v0.x/CHANGELOG
+        (v0.x保持对Vue2的支持，此版本开始将升级对Vue3的支持，不再支持Vue2)
+      - 优化改造
+        1、组件
+            * BehaviorVercode 行为验证码
+              > 添加轮廓描边
+        2、支持抖音小程序
+        3、支持Vue3.js和TypeScript开发环境

@@ -10,11 +10,11 @@
 
 ### 源码部分
 
-直接在 ```HBuilder X``` 中运行即可启动和编辑代码了。
+直接使用命令行运行即可启动和编辑代码了。
 
 下面列出源码目录：
 
-- uniQuery（根目录）
+- uniQuery/src（根目录）
     - components：组件源码
     - libs：api源码
     - tools：被复用的一些方法
@@ -35,14 +35,12 @@ npm run offiaccount
 
 ### 文档部分
 
-编辑文档前，请先使用 ```HBuilder X``` 进行H5打包：
-
-<img src='./images/build-h5.png' />
+编辑文档前，请先使用 ```npm run build:h5``` 进行H5打包：
 
 然后执行用例同步：
 
 ```shell
-npm run build:demo
+npm run build:docs
 ```
 
 最后启动文档：

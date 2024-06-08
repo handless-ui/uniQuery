@@ -22,28 +22,16 @@ npm install --save uni-query
 "easycom": {
     "autoscan": true,
     "custom": {
-        "^ui-(.*)": "uni-query/components/$1/index.vue"
+        "^ui-(.*)": "uni-query/src/components/$1/index.vue"
     }
 }
 </pre>
 <p>
-    此外，还需要对<span class="important">API</span>根据不同的vue版本安装：
+    此外，还需要进行安装：
 </p>
-<h3>
-    vue2.js
-</h3>
-<pre tag="javascript">
-import Vue from 'vue';
-import uniQuery from 'uni-query/libs/index';
-
-Vue.use(uniQuery, options = {});
-</pre>
-<h3>
-    vue3.js+
-</h3>
 <pre tag="javascript">
 import { createApp } from 'vue';
-import uniQuery from 'uni-query/libs/index';
+import uniQuery from 'uni-query/src/libs/index';
 
 let app = createApp(App);
 app.use(uniQuery, options = {});
