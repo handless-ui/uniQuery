@@ -12,7 +12,7 @@ shims-vue.d.ts
 build
 .gitignore
 package-lock.json
-unpackage
+dist
 pages
 static
 html

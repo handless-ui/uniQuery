@@ -1,4 +1,4 @@
-import titleInfo from "../tools/titleInfo";
+import titleInfo from "../src/tools/titleInfo";
 
 export default () => {
     return new Promise((resolve, reject) => {
