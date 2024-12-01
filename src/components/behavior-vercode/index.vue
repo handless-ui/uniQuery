@@ -13,16 +13,16 @@
 				<image class="icon" :src="shadowSrc"></image>
 				<image :style="{ left: (left - val) + 'px' }" class="icon" :src="boxSrc"></image>
 				<view class="icon no-show">
-					<VISCanvas ref="shadowRef" :region="false" :width="boxWidth" :height="boxHeight"></VISCanvas>
+					<UQCanvas ref="shadowRef" :width="boxWidth" :height="boxHeight"></UQCanvas>
 				</view>
 				<view class="icon no-show">
-					<VISCanvas ref="boxRef" :region="false" :width="boxWidth" :height="boxHeight"></VISCanvas>
+					<UQCanvas ref="boxRef" :width="boxWidth" :height="boxHeight"></UQCanvas>
 				</view>
 			</view>
 			<view v-if='ok' class="ok">
 				拼图验证成功
 			</view>
-			<view class="drag" @touchend="doCheck" v-else>
+			<view class="drag" @touchend="doCheck" @click="doCheck" v-else>
 
 				<!-- 提示文字 -->
 				<view class="tips">
@@ -47,9 +47,11 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import UQPopup from "../popup/index.vue";
-import VISCanvas from "vislite/uni-app/ui-canvas.vue";
 import type CanvasType from "vislite/types/Canvas";
+
+import UQPopup from "../popup/index.vue";
+import UQCanvas from "../canvas/index.vue";
+import { throttle } from "vislite";
 import { ref, nextTick } from "vue";
 
 let handler = {};
@@ -121,49 +123,47 @@ let init = () => {
 	shadowRef.value.fetch().then((shadowPainter: CanvasType) => {
 		boxRef.value.fetch().then((boxPainter: CanvasType) => {
 
-			let shadow = shadowPainter.getContext() as CanvasRenderingContext2D;
-			let box = boxPainter.getContext() as CanvasRenderingContext2D;
-
 			let p = randowP();
 
-			shadow.fillStyle = "rgba(0,0,0,0.2)";
-			shadow.strokeStyle = '#000';
-			shadow.save();
-			clipPath(shadow, p[0], p[1]);
-			shadow.fill();
-			shadow.stroke();
-			shadow.restore();
-			shadowPainter.draw(false, () => {
-				shadowPainter.toDataURL().then(url => {
-					shadowSrc.value = url;
-				});
-			});
+			shadowPainter.config({
+				fillStyle: "rgba(0,0,0,0.2)",
+				strokeStyle: '#000'
+			}).save();
 
-			(box as any).setGlobalAlpha(1);
-			box.save();
-			clipPath(box, p[0], p[1]);
-			box.clip();
+			clipPath(shadowPainter, p[0], p[1]);
 
-			boxPainter.drawImage(props.bgicon, 0, 0, width, height).then(() => {
-				box.restore();
-
-				boxPainter.config({
-					strokeStyle: "white"
-				}).stroke();
-				boxPainter.draw(false, () => {
-					boxPainter.toDataURL().then(url => {
-						boxSrc.value = url;
+			shadowPainter.fill()
+				.stroke()
+				.restore()
+				.draw(false, () => {
+					shadowPainter.toDataURL().then(url => {
+						shadowSrc.value = url;
 					});
 				});
 
-				val.value = p[0];
-			});
+			boxPainter.save()
+			clipPath(boxPainter, p[0], p[1]);
+			boxPainter.clip()
+
+				.drawImage(props.bgicon, 0, 0, width, height).then(() => {
+					boxPainter.restore()
+						.config({
+							strokeStyle: "white"
+						}).stroke()
+						.draw(false, () => {
+							boxPainter.toDataURL().then(url => {
+								boxSrc.value = url;
+							});
+						});
+
+					val.value = p[0];
+				});
 
 		});
 	});
 };
 
-let doCheck = () => {
+let doCheck = throttle(() => {
 	let dist = left.value - val.value;
 
 	// 通过
@@ -177,7 +177,7 @@ let doCheck = () => {
 		init();
 		close(false);
 	}
-};
+});
 
 // 拖拽移动滑块
 let doDrag = (e: any) => {
@@ -204,31 +204,18 @@ let randowP = () => {
 };
 
 // 缺口轮廓绘制
-let clipPath = (painter: CanvasRenderingContext2D, x: number, y: number) => {
+let clipPath = (painter: CanvasType, x: number, y: number) => {
 	let r = 5;
-	painter.beginPath();
-	painter.moveTo(x, y);
-	painter.arcTo(x, y - r, x + r, y - r, r);
-	painter.lineTo(x + 2 * r, y - r);
-	painter.arcTo(x + 2 * r, y - 2 * r, x + 3 * r, y - 2 * r, r);
-	painter.arcTo(x + 4 * r, y - 2 * r, x + 4 * r, y - r, r);
-	painter.lineTo(x + 5 * r, y - r);
-	painter.arcTo(x + 6 * r, y - r, x + 6 * r, y, r);
-	painter.lineTo(x + 6 * r, y + r);
-	painter.arcTo(x + 7 * r, y + r, x + 7 * r, y + 2 * r, r);
-	painter.arcTo(x + 7 * r, y + 3 * r, x + 6 * r, y + 3 * r, r);
-	painter.lineTo(x + 6 * r, y + 4 * r);
-	painter.arcTo(x + 6 * r, y + 5 * r, x + 5 * r, y + 5 * r, r);
-	painter.lineTo(x + 4 * r, y + 5 * r);
-	painter.arcTo(x + 4 * r, y + 4 * r, x + 3 * r, y + 4 * r, r);
-	painter.arcTo(x + 2 * r, y + 4 * r, x + 2 * r, y + 5 * r, r);
-	painter.lineTo(x + r, y + 5 * r);
-	painter.arcTo(x, y + 5 * r, x, y + 4 * r, r);
-	painter.lineTo(x, y + 3 * r);
-	painter.arcTo(x + r, y + 3 * r, x + r, y + 2 * r, r);
-	painter.arcTo(x + r, y + r, x, y + r, r);
-	painter.lineTo(x, y);
-	painter.closePath();
+	painter.beginPath()
+		.arc(x + r, y + r, r, Math.PI, Math.PI * 0.5)
+		.arc(x + 3 * r, y, r, Math.PI, Math.PI)
+		.arc(x + 5 * r, y + r, r, Math.PI * -0.5, Math.PI * 0.5)
+		.arc(x + 6 * r, y + 3 * r, r, Math.PI * 1.5, Math.PI)
+		.arc(x + 5 * r, y + 5 * r, r, 0, Math.PI * 0.5)
+		.arc(x + 3 * r, y + 6 * r, r, 0, -Math.PI)
+		.arc(x + r, y + 5 * r, r, Math.PI * 0.5, Math.PI * 0.5)
+		.arc(x, y + 3 * r, r, Math.PI * 0.5, -Math.PI)
+		.closePath();
 };
 
 defineExpose({

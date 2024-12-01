@@ -1,0 +1,158 @@
+<header>
+    ZoomLine 可缩放折线图
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✘
+            </td>
+            <td>
+                ✘
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+    &lt;ui-zoom-line" :data="data"&gt;&lt;/ui-zoom-line&gt;
+</pre>
+<pre tag="javascript">
+let data = [
+    { value: 148, name: '2007/7/1' },
+    { value: 35, name: '2007/7/2' },
+    { value: 180, name: '2007/7/3' },
+    ......
+];
+</pre>
+<h2>
+    配置项
+</h2>
+<h3>
+    ZoomLine Attributes
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                data
+            </td>
+            <td>
+                数值清单
+            </td>
+            <td>
+                Array&lt;{"name":string,"value":number}&gt;
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                color
+            </td>
+            <td>
+                折线颜色
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                "#e94782"
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gradient
+            </td>
+            <td>
+                填充渐变色
+            </td>
+            <td>
+                [string,string]
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+
+            </td>
+            <td>
+                如果设置，就会对区域进行渐变色填充
+            </td>
+        </tr>
+    </tbody>
+</table>

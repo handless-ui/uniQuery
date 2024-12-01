@@ -1,0 +1,99 @@
+<header>
+    Selector 级联选择器
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+<ui-picker ref="myselectorRef"></ui-picker>
+</pre>
+<p>
+    页面中准备好以后，直接使用open方法即可打开：
+</p>
+<pre tag="javascript">
+myselectorRef.value.open(getList).then((value)=>{
+    // value就是用户选择的值
+}).catch((err)=>{
+    // 如果出错或者用户取消了选择
+});
+</pre>
+<p>
+    其中getList是一个函数，用以根据当前选择的内容获取下一级可选列表，比如：
+</p>
+<pre tag="javascript">
+let getList = (selected)=>{
+    // 根据selected值返回，下面为了演示写死
+    return [
+        { label: "江苏省", value: "js" },
+        { label: "浙江省", value: "zj" },
+        { label: "山东省", value: "sd" }
+    ];
+}
+</pre>
+<p>
+    上面的
+    <span class="special">selected</span>
+    是一个数组，比如
+    <span class="special">["js","nj"]</span>
+    表示前面选择的是
+    <span class="special">江苏省南京市</span>
+    ，现在需要返回区列表。
+</p>
+<p>
+    此外，如果用户希望下次打开的时候，默认选中上次的结果，可以：
+</p>
+<pre tag="javascript">
+let oldValue = undefined;
+myselectorRef.value.open(getList, oldValue).then((value)=>{
+    oldValue = value;
+});
+</pre>

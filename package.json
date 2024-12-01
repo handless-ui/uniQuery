@@ -1,13 +1,13 @@
 {
   "name": "uni-query",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "🐠 为uniapp设计的开源组件库，专注最重要的核心组件",
   "main": "libs/index.js",
   "typings": "./types/index.d.ts",
   "scripts": {
-    "init": "npm install && devby --copy ./node_modules/pageby/dist/pageby.min.js ./docs/js/min/pageby.min.js",
     "offiaccount": "offiaccount-cli --config offiaccount.config.js",
-    "dev:docs": "devby -s 20000",
+    "dev": "oipage-cli --run \"npm run dev:h5\" \"npm run dev:docs\"",
+    "dev:docs": "oipage-cli -s 20000 ./docs",
     "dev:h5": "uni",
     "dev:mp-weixin": "uni -p mp-weixin",
     "dev:mp-alipay": "uni -p mp-alipay",
@@ -16,11 +16,11 @@
     "build:mp-weixin": "uni build -p mp-weixin",
     "build:mp-alipay": "uni build -p mp-alipay",
     "build:mp-toutiao": "uni build -p mp-toutiao",
-    "build:docs": "node ./build/index.js"
+    "build:docs": "npm run build:h5 && node ./build/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oi-contrib/uniQuery.git"
+    "url": "git+https://github.com/handless-ui/uniQuery.git"
   },
   "author": {
     "name": "zxl20070701",
@@ -28,9 +28,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oi-contrib/uniQuery/issues"
+    "url": "https://github.com/handless-ui/uniQuery/issues"
   },
-  "homepage": "https://oi-contrib.github.io/uniQuery",
+  "homepage": "https://handless-ui.github.io/uniQuery",
   "keywords": [
     "uniapp",
     "H5",
@@ -46,8 +46,9 @@
     "scripts": {}
   },
   "dependencies": {
+    "h5charts": "^0.3.0",
     "pointin": "^0.1.1",
-    "vislite": "^1.1.0"
+    "vislite": "^1.2.1"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.3.2",
@@ -63,8 +64,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-3090920231225001",
     "@vue/runtime-core": "^3.2.45",
     "@vue/tsconfig": "^0.1.3",
-    "devby": "^0.7.0",
-    "pageby": "^0.1.0",
+    "oipage": "^0.1.0",
     "sass": "^1.71.0",
     "typescript": "^4.9.4",
     "vite": "^4.5.3",

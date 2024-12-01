@@ -1,0 +1,174 @@
+<header>
+    SimpleBar 简单柱状图
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+&lt;ui-simple-bar" :label="axis" :data="data"&gt;&lt;/ui-simple-bar&gt;
+</pre>
+<pre tag="javascript">
+let axis = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+let data = [120, 200, 150, 80, 70, 110, 130];
+</pre>
+<h2>
+    配置项
+</h2>
+<h3>
+    SimpleBar Attributes
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                label
+            </td>
+            <td>
+                非数值刻度列表
+            </td>
+            <td>
+                Array&lt;string&gt;
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data
+            </td>
+            <td>
+                数值清单
+            </td>
+            <td>
+                Array&lt;number&gt;
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                labelType
+            </td>
+            <td>
+                非数值轴
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                "xAxis"
+            </td>
+            <td>
+                可以是"xAxis"或"yAxis"
+            </td>
+        </tr>
+        <tr>
+            <td>
+                color
+            </td>
+            <td>
+                柱状图颜色
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                "rgb(84,112,198)"
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

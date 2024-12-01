@@ -54,19 +54,10 @@
 <ui-tabs :list="list" @change="change"></ui-tabs>
 </pre>
 <pre tag="javascript">
-export default {
-    data() {
-        return {
-            list: [
-                "关注", "推荐", "电影", "电视剧", "小视频", "游戏", "校园", "影视"
-            ]
-        };
-    },
-    methods: {
-        change(item) {
-            console.log(item);
-        }
-    }
+let list= [ "关注", "推荐", "电影", "电视剧", "小视频", "游戏", "校园", "影视" ];
+
+let change = (item) => {
+    console.log(item);
 };
 </pre>
 <p>

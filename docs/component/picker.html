@@ -1,0 +1,116 @@
+<header>
+    Picker 滚动选择器
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+<ui-picker ref="mypickerRef"></ui-picker>
+</pre>
+<p>
+    页面中准备好以后，直接使用open方法即可打开：
+</p>
+<pre tag="javascript">
+mypickerRef.value.open(lists).then((value)=>{
+    // value就是用户选择的值
+}).catch((err)=>{
+    // 如果出错或者用户取消了选择
+});
+</pre>
+<p>
+    选择分为单列和多列，下面分别举例子：
+</p>
+<h3>
+    单列
+</h3>
+<pre tag="javascript">
+let oldValue = undefined;
+let lists = [
+    { label: "数学", value: "mathmatical" }, 
+    { label: "英语", value: "english" }, 
+    { label: "物理", value: "physics" }, 
+    { label: "地理", value: "geography" }, 
+    { label: "语文", value: "chinese" }, 
+    { label: "生物", value: "biology" }, 
+    { label: "历史", value: "history" }
+];
+
+mypickerRef.value.open(lists, oldValue).then((value) => {
+    oldValue = value;
+});
+</pre>
+<h3>
+    多列
+</h3>
+<pre tag="javascript">
+let oldValue = undefined;
+let lists = [
+    [
+        { label: "2010年", value: "2010" }, 
+        { label: "2011年", value: "2011"}, 
+        { label: "2012年", value: "2012" },
+        { label: "2013年", value: "2013" }, 
+        { label: "2014年", value: "2014" }, 
+        { label: "2015年", value: "2015" }, 
+        { label: "2016年", value: "2016" }
+    ], [
+        { label: "一季度", value: "Q1" }, 
+        { label: "二季度", value: "Q2" }, 
+        { label: "三季度", value: "Q3" }, 
+        { label: "四季度", value: "Q4" }
+    ]
+];
+
+mypickerRef.value.open(lists, oldValue).then((value) => {
+    oldValue = value;
+});
+</pre>

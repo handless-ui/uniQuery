@@ -40,7 +40,7 @@ v0.3.0:
 v1.0.0:
     date:2024-06-08
     changes:
-      - 原v0.x的功能将独立一个分支继续维护：https://github.com/oi-contrib/uniQuery/blob/v0.x/CHANGELOG
+      - 原v0.x的功能将独立一个分支继续维护：https://github.com/handless-ui/uniQuery/blob/v0.x/CHANGELOG
         (v0.x保持对Vue2的支持，此版本开始将升级对Vue3的支持，不再支持Vue2)
       - 优化改造
         1、组件
@@ -48,3 +48,28 @@ v1.0.0:
               > 添加轮廓描边
         2、支持抖音小程序
         3、支持Vue3.js和TypeScript开发环境
+v1.1.0:
+    date:2024-12-01
+    changes:
+      - 修复bug
+        1、组件
+            * BehaviorVercode 行为验证码
+              > 修复在非移动端无法使用问题
+      - 优化改造
+        1、组件
+            * BehaviorVercode 行为验证码
+              > 兼容抖音小程序
+            * Popup 弹出层
+              > 调整z-index属性以兼容 uni.showModal 可以正常使用
+      - 新增功能
+        1、可视化
+            * Canvas 画布
+            * SimpleBar 简单柱状图
+            * SimplePie 简单饼图
+            * ZoomLine 可缩放折线图
+            * DrawBoard 绘板
+        2、组件
+            * InputVercode 输入验证码
+            * Loading 加载中
+            * Picker 滚动选择器
+            * Selector 下拉选择器

@@ -64,14 +64,14 @@
     实现局部滚动，可滚动高度如何计算？可以这样：
 </p>
 <pre tag="html">
-<ui-title ref="mytitle" title="标题" backicon="/static/images/backBlack.png"></ui-title>
+<ui-title ref="mytitleRef" title="标题" backicon="/static/images/backBlack.png"></ui-title>
 <scroll-view scroll-y="true" :style="{ height: scrollHeight + 'px' }"></scroll-view>
 </pre>
 <p>
     然后直接获取剩余高度：
 </p>
 <pre tag="javascript">
-    this.scrollHeight = this.$refs.mytitle.getHeight();
+scrollHeight.value = mytitleRef.value.getHeight();
 </pre>
 <h2>
     配置项

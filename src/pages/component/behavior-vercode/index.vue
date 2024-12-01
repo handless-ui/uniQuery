@@ -14,9 +14,9 @@ import { ref, onMounted } from "vue";
 let myvercodeRef = ref();
 
 let doit = () => {
-  myvercodeRef.value.open().then((res) => {
+  myvercodeRef.value.open().then((res: any) => {
     console.log(res)
-  }).catch((err) => {
+  }).catch((err: any) => {
     console.error(err);
   });
 };

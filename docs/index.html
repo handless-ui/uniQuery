@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./logo.png">
     <title>uniQuery - 为uniapp设计的开源组件库，专注最重要的核心组件</title>
-    <script src="./js/min/pageby.min.js"></script>
+    <script src="./js/pageby-0.1.0.js"></script>
     <link rel="stylesheet" href="./styles/common.css">
     <script src="./js/system.js"></script>
 </head>
@@ -32,10 +32,13 @@
             <span active="no" id="component-nav-id" onclick="changeNav('component')">
                 组件
             </span>
+            <span active="no" id="visualization-nav-id" onclick="changeNav('visualization')">
+                可视化
+            </span>
             <span active="no" id="api-nav-id" onclick="changeNav('api')">
                 API
             </span>
-            <a target="_blank" href="https://github.com/oi-contrib/uniQuery">
+            <a target="_blank" href="https://github.com/handless-ui/uniQuery">
                 GitHub
             </a>
         </nav>
@@ -108,6 +111,21 @@
                             Calendar 日历
                         </span>
                     </li>
+                    <li>
+                        <span onclick="changeMenu('loading')">
+                            Loading 加载中
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('selector')">
+                            Selector 级联选择器
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('picker')">
+                            Picker 滚动选择器
+                        </span>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -123,6 +141,65 @@
                     <li>
                         <span onclick="changeMenu('title')">
                             Title 标题头
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('input-vercode')">
+                            InputVercode 输入验证码
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu" id="visualization-id">
+        <h3>
+            可视化
+        </h3>
+        <ul>
+            <li>
+                <span class="sub-title">
+                    基础
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('canvas')">
+                            Canvas 画布
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="sub-title">
+                    图表
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('simple-bar')">
+                            SimpleBar 简单柱状图
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('simple-pie')">
+                            SimplePie 简单饼图
+                        </span>
+                    </li>
+                    <li>
+                        <span onclick="changeMenu('zoom-line')">
+                            ZoomLine 可缩放折线图
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="sub-title">
+                    功能组件
+                </span>
+                <ul>
+                    <li>
+                        <span onclick="changeMenu('draw-board')">
+                            DrawBoard 绘板
                         </span>
                     </li>
                 </ul>

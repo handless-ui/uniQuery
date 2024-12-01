@@ -1,0 +1,129 @@
+<header>
+    InputVercode 输入验证码
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+<template>
+    <ui-input-vercode ref="myinputVercodeRef"></ui-input-vercode>
+</template>
+</pre>
+<p>
+    页面中准备好以后，直接使用open方法即可打开：
+</p>
+<pre tag="javascript">
+    myinputVercodeRef.value.open(config).then((value) => {
+    // value就是用户输入的验证码
+}).catch((err)=>{
+    // 如果出错或者用户取消了选择
+});
+</pre>
+<p>
+    其中config的格式如下：
+</p>
+<pre tag="javascript">
+{
+    "phone": string
+}
+</pre>
+<h3>
+    InputVercode Events
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                名称
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                参数
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                send
+            </td>
+            <td>
+                点击“发送验证码”触发
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                help
+            </td>
+            <td>
+                点击“没收到验证码”触发
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

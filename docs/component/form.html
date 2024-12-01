@@ -77,7 +77,7 @@ options = {
 </pre>
 <p>
     上面是定义规则的例子（更多规则定义例子可以查看
-    <a href="https://github.com/oi-contrib/uniQuery/blob/master/validate.js" target="_blank">validate.js</a>
+    <a href="https://github.com/handless-ui/uniQuery/blob/master/src/validate.ts" target="_blank">validate.js</a>
     文件），使用的例子：
 </p>
 <pre tag="html">
@@ -103,55 +103,50 @@ options = {
     </ui-form>
 </template>
 
-&lt;script&gt;
-    export default {
-        data() {
-            return {
-                // 提交参数
-                params: {
-                    name: "",
-                    phone: ""
-                },
+&lt;script setup lang="ts"&gt;
+import { reactive, ref } from "vue";
 
-                // 表单校验规则
-                rules: {
-                    name: [{
-                        required: true,
-                        message: "请输入姓名"
-                    }],
-                    phone: [{
-                        required: true,
-                        message: "请输入手机号"
-                    }, {
-                        phone: true,
-                        message: "请输入正确的手机号"
-                    }]
-                }
-            }
-        },
-        methods: {
-            doSubmit() {
-                this.$refs.myform.submit()
+// 提交参数
+let params = reactive({
+    name: "",
+    phone: ""
+});
 
-                    // 如果表单合法
-                    .then(() => {
-                        uni.showToast({
-                            title: "表单合法了～",
-                            icon: 'none',
-                            duration: 2000
-                        });
-                    })
+// 表单校验规则
+let rules = {
+    name: [{
+        required: true,
+        message: "请输入姓名"
+    }],
+    phone: [{
+        required: true,
+        message: "请输入手机号"
+    }, {
+        phone: true,
+        message: "请输入正确的手机号"
+    }]
+};
 
-                    // 非法的话提出提示
-                    .catch(error => {
-                        uni.showToast({
-                            title: error,
-                            icon: 'none',
-                            duration: 2000
-                        });
-                    });
-            }
-        }
-    }
+let doSubmit = () => {
+    myformRef.value.submit()
+
+        // 如果表单合法
+        .then(() => {
+            uni.showToast({
+                title: "表单合法了～",
+                icon: 'none',
+                duration: 2000
+            });
+        })
+
+        // 非法的话提出提示
+        .catch(error => {
+            uni.showToast({
+                title: error,
+                icon: 'none',
+                duration: 2000
+            });
+        });
+};
 &lt;/script&gt;
 </pre>

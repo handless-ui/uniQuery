@@ -23,7 +23,7 @@
 
 稍微特殊一点的是，微信公众号测试还需要对```offiaccount.config.js```进行配置。
 
-> 如果配置有问题，可以提[issue](https://github.com/oi-contrib/uniQuery/issues)告诉我们。
+> 如果配置有问题，可以提[issue](https://github.com/handless-ui/uniQuery/issues)告诉我们。
 
 然后启动微信公众号测试服务器：
 

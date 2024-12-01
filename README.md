@@ -1,6 +1,6 @@
-- 💘 开源不易，去 <i>[Github给个Star](https://github.com/oi-contrib/uniQuery) </i>吧！
+- 💘 开源不易，去 <i>[Github给个Star](https://github.com/handless-ui/uniQuery) </i>吧！
 
-<img src='https://oi-contrib.github.io/uniQuery/logo.png' height='100px'/>
+<img src='https://handless-ui.github.io/uniQuery/logo.png' height='100px'/>
 
 <p>
     <a href="https://zxl20070701.github.io/toolbox/#/npm-download?packages=uni-query&interval=7">
@@ -9,11 +9,11 @@
     <a href="https://www.npmjs.com/package/uni-query">
         <img src="https://img.shields.io/npm/v/uni-query.svg" alt="Version">
     </a>
-    <a href="https://github.com/oi-contrib/uniQuery" target='_blank'>
-        <img alt="GitHub repo stars" src="https://img.shields.io/github/stars/oi-contrib/uniQuery?style=social">
+    <a href="https://github.com/handless-ui/uniQuery" target='_blank'>
+        <img alt="GitHub repo stars" src="https://img.shields.io/github/stars/handless-ui/uniQuery?style=social">
     </a>
-      <a href="https://gitee.com/oi-contrib/uniQuery" target='_blank'>
-        <img alt="Gitee repo stars" src="https://gitee.com/oi-contrib/uniQuery/badge/star.svg?theme=dark">
+      <a href="https://gitee.com/handless-ui/uniQuery" target='_blank'>
+        <img alt="Gitee repo stars" src="https://gitee.com/handless-ui/uniQuery/badge/star.svg?theme=dark">
     </a>
 </p>
 
@@ -21,7 +21,7 @@
 
 # uniQuery
 
-```uniQuery```是一个为```uniapp```开发的组件库，同时包括各种使用功能。官网地址：[https://oi-contrib.github.io/uniQuery](https://oi-contrib.github.io/uniQuery)
+```uniQuery```是一个为```uniapp```开发的组件库，同时包括各种使用功能。官网地址：[https://handless-ui.github.io/uniQuery](https://handless-ui.github.io/uniQuery)
 
 ## 简介
 
@@ -31,17 +31,23 @@
 
 比如微信小程序，很多功能调用前需要提示用户同意`《用户隐私协议》`，本组件库内置相关功能：
 
-<img src="https://oi-contrib.github.io/uniQuery/images/privacy-review.png" width="300"/>
+<img src="https://handless-ui.github.io/uniQuery/images/privacy-review.png" width="300"/>
 
 ### 常用的组件
 
-我们提供了[日历](https://oi-contrib.github.io/uniQuery/#/component/calendar)、[tabs](https://oi-contrib.github.io/uniQuery/#/component/tabs)、[表单校验](https://oi-contrib.github.io/uniQuery/#/component/form)等实用的组件：
+我们提供了[日历](https://handless-ui.github.io/uniQuery/#/component/calendar)、[tabs](https://handless-ui.github.io/uniQuery/#/component/tabs)、[表单校验](https://handless-ui.github.io/uniQuery/#/component/form)等实用的组件：
 
-<img src="https://oi-contrib.github.io/uniQuery/images/component-review.png" width="600"/>
+<img src="https://handless-ui.github.io/uniQuery/images/component-review.png" width="600"/>
+
+### 可视化相关
+
+使用[canvas](https://handless-ui.github.io/uniQuery/#/visualization/canvas)这个可视化基础画布，可以100%自由定制，同时我们提供了[简单柱状图](https://handless-ui.github.io/uniQuery/#/visualization/simple-bar)、[简单饼图](https://handless-ui.github.io/uniQuery/#/visualization/simple-pie)、[可缩放折线图](https://handless-ui.github.io/uniQuery/#/visualization/zoom-line)等常见的图表：
+
+<img src="https://handless-ui.github.io/uniQuery/images/visualization-review.jpeg" width="700"/>
 
 ### 接口API
 
-此外，我们还提供了兼容`微信小程序`、`支付宝小程序`、`微信公众号`等端的兼容API，比如[获取地理位置](https://oi-contrib.github.io/uniQuery/#/api/getLocation)、[选择图片](https://oi-contrib.github.io/uniQuery/#/api/chooseImage)、[保存图片到相册](https://oi-contrib.github.io/uniQuery/#/api/saveAlbum)等。
+此外，我们还提供了兼容`浏览器`、`微信小程序`、`支付宝小程序`、`微信公众号`、`抖音小程序`等端的兼容API，比如[获取地理位置](https://handless-ui.github.io/uniQuery/#/api/getLocation)、[选择图片](https://handless-ui.github.io/uniQuery/#/api/chooseImage)、[保存图片到相册](https://handless-ui.github.io/uniQuery/#/api/saveAlbum)等。
 
 ## 更新日志
 
@@ -55,7 +61,7 @@
 - 新组件或API需求采集和开发
 - 文档优化（提高可读性、丰富用例）
 
-给我们[留言](https://github.com/oi-contrib/uniQuery/issues)告诉我们你希望快速扩展的功能，我们会优先你的建议考虑哦～
+给我们[留言](https://github.com/handless-ui/uniQuery/issues)告诉我们你希望快速扩展的功能，我们会优先你的建议考虑哦～
 
 ## 参与贡献
 
@@ -65,7 +71,7 @@
 - 文档编辑：文档说明或例子的改进和优化。
 - 新的需求：可以通过提issue来告诉我们希望下一版本支持的组件或API等功能。
 
-如果有意向加入我们，你可以通过提 [issue](https://github.com/oi-contrib/uniQuery/issues) 和我们取到联系，请简单说明一下情况，我们会尽快回复。
+如果有意向加入我们，你可以通过提 [issue](https://github.com/handless-ui/uniQuery/issues) 和我们取到联系，请简单说明一下情况，我们会尽快回复。
 
 你可以查看[uniQuery 贡献指南](./.github/CONTRIBUTING.md)文件了解更多细节，查看[AUTHORS.txt](./AUTHORS.txt)了解所有的贡献者。
 

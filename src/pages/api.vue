@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-let goto = (pagename) => {
+let goto = (pagename: string) => {
   uni.navigateTo({
     url: "/pages/api/" + pagename + "/index",
   });

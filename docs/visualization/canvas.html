@@ -1,0 +1,149 @@
+<header>
+    Canvas 画布
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+    &lt;ui-canvas" ref="canvasRef" :width="400" :height="400"&gt;&lt;/ui-canvas&gt;
+</pre>
+<pre tag="javascript">
+import { ref, onMounted } from "vue";
+import type CanvasType from "vislite/types/Canvas";
+
+let canvasRef = ref();
+onMounted(function () {
+
+    canvasRef.value.fetch().then((painter: CanvasType) => {
+        // todo
+    });
+
+});
+</pre>
+<p>
+    可以看见，获取的画笔
+    <span class="important">painter</span>
+    就是
+    <span class="special">
+        VISLite's Canvas
+    </span>
+    的实例，具体API你可以查阅
+    <a href="https://handless-ui.github.io/VISLite/#/api/canvas/api" target="_blank">
+        画笔文档
+    </a>
+    了解详情。
+</p>
+<h3>
+    Canvas Events
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                名称
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                参数
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                start
+            </td>
+            <td>
+                手指按下时触发
+            </td>
+            <td>
+                {x:number,y:number}
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                move
+            </td>
+            <td>
+                手指移动时触发
+            </td>
+            <td>
+                {x:number,y:number}
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                end
+            </td>
+            <td>
+                手指松开时触发
+            </td>
+            <td>
+                {x:number,y:number}
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

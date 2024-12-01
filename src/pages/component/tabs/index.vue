@@ -29,7 +29,7 @@ let list = [
   "战争",
 ];
 
-let change = (item) => {
+let change = (item: any) => {
   console.log(item);
 };
 </script>

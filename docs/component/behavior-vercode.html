@@ -45,7 +45,7 @@
                 ✔
             </td>
             <td>
-                ✘
+                ✔ 1.1.0 新增
             </td>
         </tr>
     </tbody>
@@ -54,7 +54,7 @@
     使用
 </h2>
 <pre tag="html">
-&lt;ui-behavior-vercode ref="myvercode" 
+&lt;ui-behavior-vercode ref="myvercodeRef" 
     bgicon="/static/images/nanjing.jpeg" righticon="/static/images/toRight.png"
 &gt;&lt;/ui-behavior-vercode&gt;
 </pre>
@@ -62,7 +62,7 @@
     页面中准备好以后，直接使用open方法即可打开：
 </p>
 <pre tag="javascript">
-this.$refs.myvercode.open().then((value) => {
+myvercodeRef.value.open().then((value) => {
     // 如果校验通过
 }).catch((err)=>{
     // 如果校验未通过

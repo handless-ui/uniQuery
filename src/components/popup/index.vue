@@ -64,7 +64,7 @@ watch(() => props.show, (newVal) => {
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999999;
+  z-index: 100;
   transition-duration: 300ms;
   transition-timing-function: ease-out;
   transition-property: opacity;

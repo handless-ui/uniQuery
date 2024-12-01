@@ -1,0 +1,119 @@
+<header>
+    SimplePie 简单饼图
+</header>
+<div class="version">
+    1.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+&lt;ui-simple-pie" :data="data"&gt;&lt;/ui-simple-pie&gt;
+</pre>
+<pre tag="javascript">
+let data = [
+    { value: 1048, name: '搜索引擎' },
+    { value: 735, name: '直接收入' },
+    { value: 580, name: '邮箱' },
+    { value: 484, name: '工会广告' },
+    { value: 300, name: '视频广告' }
+];
+</pre>
+<h2>
+    配置项
+</h2>
+<h3>
+    SimplePie Attributes
+</h3>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                data
+            </td>
+            <td>
+                数值清单
+            </td>
+            <td>
+                Array&lt;{"name":string,"value":number}&gt;
+            </td>
+            <td>
+                是
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

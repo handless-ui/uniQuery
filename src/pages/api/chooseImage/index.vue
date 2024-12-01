@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-let imgs = ref([]);
+let imgs = ref<Array<string>>([]);
 
 let doit = () => {
 	uni.$uniQuery

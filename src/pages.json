@@ -13,9 +13,21 @@
 			}
 		},
 		{
+			"path": "pages/visualization",
+			"style": {
+				"navigationBarTitleText": "uniQuery 可视化"
+			}
+		},
+		{
 			"path": "pages/api",
 			"style": {
 				"navigationBarTitleText": "uniQuery 接口"
+			}
+		},
+		{
+			"path": "pages/test",
+			"style": {
+				"navigationBarTitleText": "uniQuery 测试"
 			}
 		}
 	],
@@ -38,10 +50,22 @@
 				"text": "组件"
 			},
 			{
+				"pagePath": "pages/visualization",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/component_active.png",
+				"text": "可视化"
+			},
+			{
 				"pagePath": "pages/api",
 				"iconPath": "static/api.png",
 				"selectedIconPath": "static/api_active.png",
 				"text": "接口"
+			},
+			{
+				"pagePath": "pages/test",
+				"iconPath": "static/test.png",
+				"selectedIconPath": "static/test_active.png",
+				"text": "测试"
 			}
 		]
 	},
@@ -85,6 +109,59 @@
 					"style": {
 						"navigationBarTitleText": "BehaviorVercode 行为验证码"
 					}
+				},
+				{
+					"path": "input-vercode/index",
+					"style": {
+						"navigationBarTitleText": "InputVercode 输入验证码"
+					}
+				},
+				{
+					"path": "loading/index",
+					"style": {
+						"navigationBarTitleText": "Loading 加载中"
+					}
+				},
+				{
+					"path": "picker/index",
+					"style": {
+						"navigationBarTitleText": "Picker 滚动选择器"
+					}
+				},
+				{
+					"path": "selector/index",
+					"style": {
+						"navigationBarTitleText": "Selector 级联选择器"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/visualization",
+			"pages": [
+				{
+					"path": "simple-bar/index",
+					"style": {
+						"navigationBarTitleText": "SimpleBar 简单柱状图"
+					}
+				},
+				{
+					"path": "simple-pie/index",
+					"style": {
+						"navigationBarTitleText": "SimplePie 简单饼图"
+					}
+				},
+				{
+					"path": "zoom-line/index",
+					"style": {
+						"navigationBarTitleText": "ZoomLine 可缩放折线图"
+					}
+				},
+				{
+					"path": "draw-board/index",
+					"style": {
+						"navigationBarTitleText": "DrawBoard 绘板"
+					}
 				}
 			]
 		},
@@ -120,10 +197,22 @@
 					"style": {
 						"navigationBarTitleText": "numberFormat 数字格式化"
 					}
-				},{
+				},
+				{
 					"path": "getSystemInfo/index",
 					"style": {
 						"navigationBarTitleText": "getSystemInfo 获取平台信息"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/test",
+			"pages": [
+				{
+					"path": "openLocation/index",
+					"style": {
+						"navigationBarTitleText": "openLocation 打开地图"
 					}
 				}
 			]

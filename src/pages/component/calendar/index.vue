@@ -25,7 +25,7 @@ import { reactive, ref, onMounted } from "vue";
 
 let mycalendarRef = ref();
 
-let data = reactive({
+let data = reactive<any>({
   value1: {
     year: 2007,
     month: 7,
@@ -34,14 +34,14 @@ let data = reactive({
   value2: null,
 });
 
-let doit = (valueName) => {
+let doit = (valueName: keyof typeof data) => {
   mycalendarRef.value
     .open(data[valueName])
-    .then((value) => {
+    .then((value: any) => {
       console.log(value);
       data[valueName] = value;
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 };

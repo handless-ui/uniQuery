@@ -7,16 +7,20 @@
     <!-- UI组件 -->
     <view class="btn" @click="goto('tabs')">Tabs 标签页</view>
     <view class="btn" @click="goto('calendar')">Calendar 日历</view>
+    <view class="btn" @click="goto('loading')">Loading 加载中</view>
+    <view class="btn" @click="goto('picker')">Picker 滚动选择器</view>
+    <view class="btn" @click="goto('selector')">Selector 级联选择器</view>
 
     <!-- 业务组件 -->
     <view class="btn" @click="goto('behavior-vercode')">BehaviorVercode 行为验证码</view>
     <view class="btn" @click="goto('title')">Title 标题头</view>
+    <view class="btn" @click="goto('input-vercode')">InputVercode 输入验证码</view>
 
   </view>
 </template>
 
 <script setup lang="ts">
-let goto = (pagename) => {
+let goto = (pagename: string) => {
   uni.navigateTo({
     url: "/pages/component/" + pagename + "/index",
   });

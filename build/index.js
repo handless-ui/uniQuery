@@ -1,4 +1,4 @@
-const { copySync, deleteSync, error } = require("devby");
+const { copySync, deleteSync, error } = require("oipage");
 const package = require("../package.json");
 const fs = require("fs");
 
