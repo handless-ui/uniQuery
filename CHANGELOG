@@ -73,3 +73,16 @@ v1.1.0:
             * Loading 加载中
             * Picker 滚动选择器
             * Selector 下拉选择器
+v2.0.0:
+    date:2025-06-01
+    changes:
+      - 原v1.x的功能将独立一个分支继续维护：https://github.com/handless-ui/uniQuery/blob/v1.x/CHANGELOG
+        (从本版本v2.0.0开始，将新增对主题的支持)
+      - 修复bug
+        1、修复types中对 uniQuery.install 第二个参数缺少定义的错误
+        2、修复main文件配置错误问题
+      - 优化改造
+        1、NPM发布忽略掉若干多余文件
+        2、可视化图表使用布局实现
+      - 新增功能
+        1、主题

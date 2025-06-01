@@ -31,16 +31,22 @@ npm install --save uni-query
 </p>
 <pre tag="javascript">
 import { createApp } from 'vue';
-import uniQuery from 'uni-query/src/libs/index';
+import uniQuery from 'uni-query';
 
 let app = createApp(App);
 app.use(uniQuery, options = {});
 </pre>
-<p>
-    至此，就可以在项目中正常使用了。
-</p>
 <div class="warn">
     温馨提示：其中
     <span class="important">options</span>
     可选，用于配置一些个性化或扩展内容，具体可配置内容，我们将在用到的地方进行说明。
 </div>
+<p>
+    最后，在<span class="special">./src/uni.scss</span>中完成主题引入（2.0.0 新增）：
+</p>
+<pre tag="css">
+@import 'uni-query/src/theme/default.scss';
+</pre>
+<p>
+    至此，就可以在项目中正常使用了。
+</p>

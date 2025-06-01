@@ -44,11 +44,11 @@ let props = defineProps({
   },
   activeColor: {
     type: String,
-    default: "#007aff"
+    default: ""
   },
   color: {
     type: String,
-    default: "#333333"
+    default: ""
   }
 });
 
@@ -116,13 +116,13 @@ onMounted(() => {
     display: inline-block;
     padding: 0 10rpx;
     line-height: 50rpx;
-    // color: #333;
+    color: $uniquery-default-color;
     font-weight: 400;
     font-size: 28rpx;
 
     &.active {
 
-      // color: #007aff;
+      color: $uniquery-primary-color;
       &>.content {
         &>.line {
           width: 40rpx;
@@ -130,7 +130,7 @@ onMounted(() => {
           margin-bottom: 8rpx;
           margin-left: calc(50% - 20rpx);
           border-radius: 6rpx;
-          // background-color: #007aff;
+          background-color: $uniquery-primary-color;
         }
       }
     }

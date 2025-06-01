@@ -18,7 +18,7 @@ if (/MicroMessenger/i.test(window.navigator.userAgent)) {
   uni.request({
     url: "http://" + window.location.hostname + ":8090/JsApiSignature?url=" + window.location.href.split('#')[0],
     method: "GET",
-    success: function (res) {
+    success: function (res: any) {
       wx.config({
         debug: true,
         appId: res.data.appId,

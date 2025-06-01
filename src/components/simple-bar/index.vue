@@ -14,10 +14,8 @@ import type CanvasType from "vislite/types/Canvas";
 
 import { ref, onMounted, getCurrentInstance } from "vue";
 import UQCanvas from "../canvas/index.vue";
-import VISLite from "vislite";
-import ChartJs from "h5charts/src/chart/index";
-import { drawXAxis, drawYAxis } from "../../tools/chart/axis";
-import { drawRectBar } from "../../tools/chart/bar";
+import drawCoordinate from "../../tools/coordinate";
+import { BarLayout } from "vislite";
 
 let id = 'ui-simple-bar-' + (Math.random() * 10000).toFixed(0);
 let _this = getCurrentInstance();
@@ -40,66 +38,44 @@ let props = defineProps({
 });
 
 let boxWidth = ref(0), boxHeight = ref(0), canvasRef = ref();
+let barLayout = new BarLayout({});
 
-ChartJs.install(VISLite);
 onMounted(() => {
     uni.createSelectorQuery().in(_this).select("#" + id).boundingClientRect((nodeinfo: any) => {
         boxWidth.value = nodeinfo.width;
         boxHeight.value = nodeinfo.height;
-
         setTimeout(() => {
 
             canvasRef.value.fetch().then((painter: CanvasType) => {
+                barLayout.setOption({
+                    x: 50,
+                    y: boxHeight.value - 50,
+                    width: boxWidth.value - 100,
+                    height: boxHeight.value - 100,
+                    category: (props.labelType as "xAxis" | "yAxis")
+                }).bind({
+                    category: props.label as Array<string>,
+                    data: props.data as Array<number>
+                }, function (bar) {
 
-                let xAxis: any, yAxis: any;
-                if (props.labelType == "xAxis") {
-                    xAxis = {
-                        type: "category",
-                        data: props.label
-                    };
-                    yAxis = {
-                        type: "value"
-                    };
-                } else {
-                    xAxis = {
-                        type: "value"
-                    };
-                    yAxis = {
-                        type: "category",
-                        data: props.label
-                    };
-                }
+                    // 绘制刻度尺
+                    drawCoordinate(painter, bar.coordinate);
 
-                new ChartJs({
-                    grid: {
-                        width: nodeinfo.width,
-                        height: nodeinfo.height,
-                        top: 20,
-                        right: 20,
-                        bottom: 30
-                    },
-                    xAxis,
-                    yAxis,
-                    series: [{
-                        type: "bar",
-                        data: props.data as Array<number>
-                    }],
-                    update(data) {
+                    // 绘制矩形
+                    for (let i = 0; i < bar.node.length; i++) {
+                        painter.config({
+                            fillStyle: props.color
+                        });
 
-                        // 直角坐标系
-                        drawXAxis(painter, data.cartesian2d.xAxis, data.cartesian2d.label == "x" ? -1 : data.cartesian2d.yAxis.end.y);
-                        drawYAxis(painter, data.cartesian2d.yAxis, data.cartesian2d.label == "y" ? -1 : data.cartesian2d.xAxis.end.x);
-
-                        // 柱状图
-                        drawRectBar(painter, data.series[0], props.color)
-
-                        painter.draw();
+                        for (let item of bar.node[i].bar) {
+                            painter.fillRect(item.x, item.y, item.width, item.height);
+                        }
                     }
+
+                    painter.draw();
                 });
             });
-
         }, 200);
-
     }).exec();
 });
 

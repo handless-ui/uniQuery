@@ -172,7 +172,7 @@ defineExpose({
             right: 0;
             top: 0;
             font-weight: 200;
-            color: gray;
+            color: lighten($uniquery-default-color, 60%);
         }
     }
 
@@ -194,7 +194,7 @@ defineExpose({
             height: 80rpx;
             line-height: 80rpx;
             text-align: center;
-            border: 1px solid rgb(186, 183, 183);
+            border: 1px solid lighten($uniquery-default-color, 60%);
             border-radius: 10rpx;
             margin-left: 40rpx;
             vertical-align: top;
@@ -202,7 +202,7 @@ defineExpose({
 
             &.active,
             &.input {
-                border: 2px solid rgb(12, 170, 228);
+                border: 2px solid $uniquery-primary-color;
             }
 
             &.input {
@@ -235,19 +235,19 @@ defineExpose({
             position: absolute;
             right: 0;
             top: 0;
-            color: rgb(81, 166, 241);
+            color:$uniquery-primary-color;
         }
     }
 
     &>.submit {
         margin-top: 70rpx;
         color: white;
-        background-color: rgb(70, 160, 239);
+        background-color: lighten($uniquery-primary-color, 10%);
         font-size: 28rpx;
         line-height: 90rpx;
 
         &.invalid {
-            background-color: rgb(116, 182, 234);
+            background-color:lighten($uniquery-primary-color, 20%);
         }
     }
 
@@ -260,7 +260,7 @@ defineExpose({
 
     @keyframes cursor-amimation {
         from {
-            background-color: black;
+            background-color: $uniquery-default-color;
         }
 
         to {

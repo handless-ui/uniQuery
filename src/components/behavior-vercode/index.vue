@@ -288,13 +288,13 @@ defineExpose({
 			z-index: 1;
 			height: 80rpx;
 			line-height: 80rpx;
-			color: #666;
+			color: $uniquery-default-color;
 			font-size: 32rpx;
 			width: 590rpx;
 			text-align: center;
 
 			.bg {
-				background-color: #7ac23c;
+				background-color: $uniquery-success-color;
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -311,7 +311,7 @@ defineExpose({
 		}
 
 		.drag-area {
-			background-color: #eee;
+			background-color: lighten($uniquery-default-color, 70%);
 			height: 100%;
 			width: 100%;
 

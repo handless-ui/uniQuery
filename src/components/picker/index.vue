@@ -168,15 +168,15 @@ defineExpose({
             font-size: 28rpx;
 
             &.cancel {
-                background-color: #e8e9eb;
+                background-color: lighten($uniquery-default-color, 70%);
             }
 
             &.submit {
                 color: white;
-                background-color: #2196f3;
+                background-color: lighten($uniquery-primary-color, 10%);
 
                 &.disabled {
-                    background-color: #a4cbeb;
+                    background-color: lighten($uniquery-primary-color, 20%);
                 }
             }
         }

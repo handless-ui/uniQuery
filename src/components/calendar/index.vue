@@ -1,10 +1,10 @@
 <template>
   <UQPopup :show="show" @click="close()">
     <view @click.stop class="calendar-container" :style="[
-    {
-      bottom,
-    },
-  ]">
+      {
+        bottom,
+      },
+    ]">
       <view class="title"> 日期选择 </view>
       <view class="nav">
         <view class="left btn" @click="preMonth()">上个月</view>
@@ -25,30 +25,30 @@
         <view :class="['item ' + day.type]" v-for="(day, index) in days" :key="index"
           @click="doSelect(day.value, day.type)">
           <view :class="[
-    'value',
-    {
-      active:
-        selected.year == current.year &&
-        selected.month == current.month &&
-        selected.day == day.value,
-    },
-    {
-      today:
-        today.year == current.year &&
-        today.month == current.month &&
-        today.day == day.value,
-    },
-  ]">
+            'value',
+            {
+              active:
+                selected.year == current.year &&
+                selected.month == current.month &&
+                selected.day == day.value,
+            },
+            {
+              today:
+                today.year == current.year &&
+                today.month == current.month &&
+                today.day == day.value,
+            },
+          ]">
             {{ day.value }}</view>
         </view>
       </view>
       <view class="btns">
         <view class="btn cancel" @click="close()">取消</view>
         <view class="btn submit" :class="[
-    {
-      disabled: !hadSelected,
-    },
-  ]" @click="hadSelected ? close(selected) : ''">确定</view>
+          {
+            disabled: !hadSelected,
+          },
+        ]" @click="hadSelected ? close(selected) : ''">确定</view>
       </view>
     </view>
   </UQPopup>
@@ -174,7 +174,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-$gray: rgb(207, 204, 204);
+$gray: lighten($uniquery-default-color, 60%);
 
 .calendar-container {
   width: 750rpx;
@@ -188,7 +188,7 @@ $gray: rgb(207, 204, 204);
 
   &>.title {
     font-size: 32rpx;
-    color: #303133;
+    color: $uniquery-default-color;
     text-align: center;
     font-weight: 840;
     line-height: 80rpx;
@@ -208,11 +208,11 @@ $gray: rgb(207, 204, 204);
       height: 0;
 
       &.left {
-        border-right-color: #303133;
+        border-right-color: $uniquery-default-color;
       }
 
       &.right {
-        border-left-color: #303133;
+        border-left-color: $uniquery-default-color;
       }
     }
 
@@ -220,7 +220,7 @@ $gray: rgb(207, 204, 204);
       flex-grow: 1;
       text-align: center;
       font-size: 28rpx;
-      color: #303133;
+      color: $uniquery-default-color;
       font-weight: 840;
     }
   }
@@ -282,12 +282,12 @@ $gray: rgb(207, 204, 204);
       &.day {
         &>.value {
           &.today {
-            background-color: #ffeb3b;
+            background-color: $uniquery-warning-color;
             font-weight: 800;
           }
 
           &.active {
-            background-color: #2196f3;
+            background-color: $uniquery-primary-color;
             color: white;
           }
         }
@@ -308,15 +308,15 @@ $gray: rgb(207, 204, 204);
       font-size: 28rpx;
 
       &.cancel {
-        background-color: #e8e9eb;
+        background-color: lighten($uniquery-default-color, 70%);
       }
 
       &.submit {
         color: white;
-        background-color: #2196f3;
+        background-color: lighten($uniquery-primary-color, 10%);
 
         &.disabled {
-          background-color: #a4cbeb;
+          background-color: lighten($uniquery-primary-color, 20%);
         }
       }
     }

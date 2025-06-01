@@ -139,14 +139,14 @@ defineExpose({
     .content {
         &>.nav {
             height: 100rpx;
-            border-bottom: 1px solid #e7e8e8;
+            border-bottom: 1px solid lighten($uniquery-default-color, 60%);
             display: flex;
             align-items: center;
             padding: 0 30rpx;
 
             &>.item {
                 font-size: 32rpx;
-                color: #333333;
+                color: $uniquery-default-color;
                 margin-right: 50rpx;
 
                 &.hidden {
@@ -162,7 +162,7 @@ defineExpose({
                         position: absolute;
                         width: 60rpx;
                         height: 5rpx;
-                        background-color: #2196f3;
+                        background-color: $uniquery-primary-color;
                         border-radius: 3rpx;
                         left: 50%;
                         bottom: -15rpx;
@@ -191,7 +191,7 @@ defineExpose({
                     color: #ffffff;
                     width: 16px;
                     line-height: 16px;
-                    background-color: #000000;
+                    background-color: $uniquery-primary-color;
                     border-radius: 50%;
                     text-align: center;
                     font-size: 12px;

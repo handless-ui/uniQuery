@@ -1,22 +1,22 @@
 {
   "name": "uni-query",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "🐠 为uniapp设计的开源组件库，专注最重要的核心组件",
-  "main": "libs/index.js",
+  "main": "./src/libs/index.js",
   "typings": "./types/index.d.ts",
   "scripts": {
     "offiaccount": "offiaccount-cli --config offiaccount.config.js",
-    "dev": "oipage-cli --run \"npm run dev:h5\" \"npm run dev:docs\"",
-    "dev:docs": "oipage-cli -s 20000 ./docs",
+    "dev": "oipage-cli run \"npm run dev:h5\" \"npm run dev:docs\"",
+    "dev:docs": "oipage-cli serve -p 20000 --baseUrl ./docs",
     "dev:h5": "uni",
     "dev:mp-weixin": "uni -p mp-weixin",
     "dev:mp-alipay": "uni -p mp-alipay",
     "dev:mp-toutiao": "uni -p mp-toutiao",
+    "build:docs": "npm run build:h5 && node ./build/index.js",
     "build:h5": "uni build",
     "build:mp-weixin": "uni build -p mp-weixin",
     "build:mp-alipay": "uni build -p mp-alipay",
-    "build:mp-toutiao": "uni build -p mp-toutiao",
-    "build:docs": "npm run build:h5 && node ./build/index.js"
+    "build:mp-toutiao": "uni build -p mp-toutiao"
   },
   "repository": {
     "type": "git",
@@ -46,9 +46,8 @@
     "scripts": {}
   },
   "dependencies": {
-    "h5charts": "^0.3.0",
     "pointin": "^0.1.1",
-    "vislite": "^1.2.1"
+    "vislite": "^1.4.0"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.3.2",
@@ -64,7 +63,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-3090920231225001",
     "@vue/runtime-core": "^3.2.45",
     "@vue/tsconfig": "^0.1.3",
-    "oipage": "^0.1.0",
+    "oipage": "^1.1.0",
     "sass": "^1.71.0",
     "typescript": "^4.9.4",
     "vite": "^4.5.3",

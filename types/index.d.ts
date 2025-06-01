@@ -6,5 +6,5 @@
 /// <reference path="./title.d.ts" />
 
 export default class {
-    static install(Vue: any): void
+    static install(Vue: any, options?: any): void
 }
