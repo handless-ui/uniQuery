@@ -1,5 +1,5 @@
 <template>
-  <view class="popup-container" :style="[
+  <view class="popup-container" @touchmove.stop.prevent :style="[
     {
       opacity,
       display: display ? 'block' : 'none',
