@@ -133,6 +133,15 @@
 					"style": {
 						"navigationBarTitleText": "Selector 级联选择器"
 					}
+				},
+				{
+					"path": "signature/index",
+					"style": {
+						"navigationBarTitleText": "Signature 签名",
+						"mp-alipay": {
+							"allowsBounceVertical": "NO"
+						}
+					}
 				}
 			]
 		},

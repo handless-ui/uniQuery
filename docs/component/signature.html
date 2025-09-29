@@ -1,0 +1,66 @@
+<header>
+    Signature 签名
+</header>
+<div class="version">
+    2.1.0 新增
+</div>
+<table class="support">
+    <thead>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                H5
+            </td>
+            <td>
+                微信公众号
+            </td>
+            <td>
+                微信小程序
+            </td>
+            <td>
+                支付宝小程序
+            </td>
+            <td>
+                抖音小程序
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                是否支持？
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+            <td>
+                ✔
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    使用
+</h2>
+<pre tag="html">
+&lt;ui-signature @save="doSave"&gt;&lt;/ui-signature&gt;
+</pre>
+<p>
+    绘制好以后，点击保存按钮，就可以获取签字内容：
+</p>
+<pre tag="javascript">
+let doSave = (base64) => {
+    // base64就是画布内容
+};
+</pre>
