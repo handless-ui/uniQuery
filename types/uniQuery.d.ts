@@ -51,30 +51,5 @@ interface Uni {
          */
         chooseImage(): Promise<Array<string>>
 
-
-        /**
-         * 日期格式化
-         * @param input 需要格式化的值
-         * @param option 表示一些约束参数
-         */
-        dateFormat(input?: string | Date, option?: {
-
-            /**
-             * 输入格式
-             */
-            inputFormat?: string
-
-            /**
-             * 输出格式
-             */
-            format?: string
-        }): string
-
-        /**
-         * 数字格式化
-         * @param input 需要格式化的值	
-         */
-        numberFormat(input: number | string): string
-
     }
 }

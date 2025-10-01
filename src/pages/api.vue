@@ -15,12 +15,6 @@
     </view>
     <view class="btn" @click="goto('chooseImage')"> chooseImage 选择图片 </view>
 
-    <!-- 工具类 -->
-    <view class="btn" @click="goto('dateFormat')"> dateFormat 日期格式化 </view>
-    <view class="btn" @click="goto('numberFormat')">
-      numberFormat 数字格式化
-    </view>
-
   </view>
 </template>
 

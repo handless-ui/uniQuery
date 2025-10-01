@@ -1,10 +1,10 @@
 export default () => {
 	return new Promise((resolve, reject) => {
 
-		let doChoose = () => {
+		let doChoose = (callback: Function) => {
 			uni.chooseImage({
 				success: function (res) {
-					resolve(res.tempFilePaths);
+					callback(res.tempFilePaths);
 				},
 				fail: function (err) {
 					reject(err);
@@ -21,7 +21,7 @@ export default () => {
 				wx.chooseImage({
 					success(res1) {
 						let result = [];
-						(function doit(index) {
+						(function doit(index: number) {
 							wx.getLocalImgData({
 								localId: res1.localIds[index - 1],
 								success(res2) {
@@ -58,12 +58,56 @@ export default () => {
 			});
 
 		} else {
-			doChoose();
+			doChoose(function (tempFilePaths: Array<string>) {
+				let result = [];
+				(function doit(index: number) {
+					if (index > tempFilePaths.length) {
+						resolve(result);
+					} else {
+
+						let xhr = new XMLHttpRequest();
+						xhr.open('GET', tempFilePaths[index - 1], true);
+						xhr.responseType = "blob";
+						xhr.onload = function () {
+							if (this.status === 200) {
+								let fileReader = new FileReader();
+								fileReader.onload = function (e) {
+									result.push(e.target.result);
+									doit(index + 1);
+								}
+								fileReader.readAsDataURL(xhr.response);
+							}
+						};
+						xhr.send();
+					}
+				})(1);
+			});
 		}
 		// #endif
 
 		// #ifdef MP
-		doChoose();
+		doChoose(function (tempFilePaths: Array<string>) {
+			// #ifdef MP-WEIXIN
+			let result = [];
+			(function doit(index: number) {
+				if (index > tempFilePaths.length) {
+					resolve(result);
+				} else {
+					wx.getFileSystemManager().readFile({
+						filePath: tempFilePaths[index - 1],
+						encoding: 'base64',
+						success: function (res: any) {
+							result.push('data:image/png;base64,' + res.data);
+							doit(index + 1);
+						}
+					})
+				}
+			})(1);
+			// #endif
+			// #ifndef MP-WEIXIN
+			resolve(tempFilePaths);
+			// #endif
+		});
 		// #endif
 
 	});

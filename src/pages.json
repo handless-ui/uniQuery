@@ -1,5 +1,5 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index",
 			"style": {
@@ -22,12 +22,6 @@
 			"path": "pages/api",
 			"style": {
 				"navigationBarTitleText": "uniQuery 接口"
-			}
-		},
-		{
-			"path": "pages/test",
-			"style": {
-				"navigationBarTitleText": "uniQuery 测试"
 			}
 		}
 	],
@@ -60,12 +54,6 @@
 				"iconPath": "static/api.png",
 				"selectedIconPath": "static/api_active.png",
 				"text": "接口"
-			},
-			{
-				"pagePath": "pages/test",
-				"iconPath": "static/test.png",
-				"selectedIconPath": "static/test_active.png",
-				"text": "测试"
 			}
 		]
 	},
@@ -196,32 +184,9 @@
 					}
 				},
 				{
-					"path": "dateFormat/index",
-					"style": {
-						"navigationBarTitleText": "dateFormat 日期格式化"
-					}
-				},
-				{
-					"path": "numberFormat/index",
-					"style": {
-						"navigationBarTitleText": "numberFormat 数字格式化"
-					}
-				},
-				{
 					"path": "getSystemInfo/index",
 					"style": {
 						"navigationBarTitleText": "getSystemInfo 获取平台信息"
-					}
-				}
-			]
-		},
-		{
-			"root": "pages/test",
-			"pages": [
-				{
-					"path": "openLocation/index",
-					"style": {
-						"navigationBarTitleText": "openLocation 打开地图"
 					}
 				}
 			]

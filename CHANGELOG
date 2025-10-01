@@ -87,8 +87,18 @@ v2.0.0:
       - 新增功能
         1、主题
 v2.1.0:
-    date:
+    date:2025-10-01
     changes:
+      - 废弃API
+        （转移到OIPage项目维护： https://github.com/oi-contrib/OIPage ）
+        * dateFormat 日期格式化
+        * numberFormat 数字格式化
+      - 修复bug
+        1、API
+          * chooseImage 在部分端未正确解析成base64返回
+            （包括：非微信公众号的H5端、微信小程序）
+          * canvas组件toDataURL在部分端未正确解析成base64返回
+            （包括：微信小程序）
       - 优化改造
         1、Popup组件优化多层滚动问题
       - 新增功能

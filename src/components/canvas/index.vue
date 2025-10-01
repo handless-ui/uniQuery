@@ -1,6 +1,6 @@
 <template>
-    <view class="canvas-container" :id="'uni-canvas-' + uniqueid" @mousedown="doTouchstart" @mousemove="doTouchmove" @mouseup="doTouchend" @touchstart="doTouchstart" @touchmove="doTouchmove"
-        @touchend="doTouchend">
+    <view class="canvas-container" :id="'uni-canvas-' + uniqueid" @touchstart.stop.prevent="doTouchstart"
+        @touchmove.stop.prevent="doTouchmove" @touchend.stop.prevent="doTouchend">
         <!-- #ifdef MP-WEIXIN -->
         <canvas canvas-id="painter" :style="{ width: width + 'px', height: height + 'px' }"></canvas>
         <!-- #endif -->
@@ -115,7 +115,18 @@ defineExpose({
                     {
                         canvasId: painterid,
                         success: function (e: any) {
+                            // #ifdef MP-WEIXIN
+                            (wx as any).getFileSystemManager().readFile({
+                                filePath: e.tempFilePath,
+                                encoding: 'base64',
+                                success: function (res: any) {
+                                    resolve('data:image/png;base64,' + res.data);
+                                }
+                            });
+                            // #endif
+                            // #ifndef MP-WEIXIN
                             resolve(e.tempFilePath);
+                            // #endif
                         },
                         fail: function (e: any) {
                             console.error(e);

@@ -17,6 +17,7 @@
     <view class="btn" @click="goto('input-vercode')">InputVercode 输入验证码</view>
     <view class="btn" @click="goto('signature')">Signature 签名</view>
 
+
   </view>
 </template>
 

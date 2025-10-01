@@ -2,8 +2,6 @@ import getSystemInfo from "./getSystemInfo";
 import getLocation from "./getLocation";
 import saveAlbum from "./saveAlbum";
 import chooseImage from "./chooseImage";
-import dateFormat from "./dateFormat";
-import numberFormat from "./numberFormat";
 
 // API
 (uni.$uniQuery as {
@@ -12,9 +10,7 @@ import numberFormat from "./numberFormat";
 	getSystemInfo,
 	getLocation,
 	saveAlbum,
-	chooseImage,
-	dateFormat,
-	numberFormat
+	chooseImage
 };
 
 // 参数

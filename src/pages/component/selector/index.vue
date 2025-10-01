@@ -1,7 +1,7 @@
 <template>
     <view class="example-container">
         <ui-selector ref="myselectorRef"></ui-selector>
-
+        
         <view class="example-btnInput" @click="doit1()">
             <input readonly type="text" :value="value1?.label.join(' / ')" placeholder="请选择位置" />
             <button>选择</button>
