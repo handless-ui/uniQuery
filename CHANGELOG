@@ -104,3 +104,8 @@ v2.1.0:
       - 新增功能
         1、组件
             * Signature 签名
+v2.2.0:
+    date:
+    changes:
+      - 修复bug
+        1、修复Calendar年月未正确显示问题

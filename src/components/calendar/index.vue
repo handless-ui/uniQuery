@@ -100,18 +100,14 @@ let open = (initDate: {
 }) => {
   // 初始化当前日期
   if (initDate) {
-    current = {
-      year: initDate.year,
-      month: initDate.month,
-    };
+    current.year = initDate.year;
+    current.month = initDate.month;
     selected.year = initDate.year;
     selected.month = initDate.month;
     selected.day = initDate.day;
   } else {
-    current = {
-      year: today.year,
-      month: today.month,
-    };
+    current.year = today.year;
+    current.month = today.month;
   }
 
   showMonth();
