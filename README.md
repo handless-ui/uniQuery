@@ -31,19 +31,26 @@
 
 比如微信小程序，很多功能调用前需要提示用户同意`《用户隐私协议》`，本组件库内置相关功能：
 
-<img src="https://handless-ui.github.io/uniQuery/images/privacy-review.png" width="300"/>
+<img src="./snipping/privacy-review.png" width="240px"/>
 
 ### 常用的组件
 
 我们提供了[日历](https://handless-ui.github.io/uniQuery/#/component/calendar)、[tabs](https://handless-ui.github.io/uniQuery/#/component/tabs)、[表单校验](https://handless-ui.github.io/uniQuery/#/component/form)等实用的组件：
 
-<img src="https://handless-ui.github.io/uniQuery/images/component-review.png" width="600"/>
+<img src="./snipping/behavior-vercode.png" width="240px"/>
+<img src="./snipping/calendar.png" width="240px"/>
+<img src="./snipping/input-vercode.png" width="240px"/>
+<img src="./snipping/selector.png" width="240px"/>
+<img src="./snipping/signature.png" width="400px"/>
+<img src="./snipping/tabs.png" width="240px"/>
 
 ### 可视化相关
 
 使用[canvas](https://handless-ui.github.io/uniQuery/#/visualization/canvas)这个可视化基础画布，可以100%自由定制，同时我们提供了[简单柱状图](https://handless-ui.github.io/uniQuery/#/visualization/simple-bar)、[简单饼图](https://handless-ui.github.io/uniQuery/#/visualization/simple-pie)、[可缩放折线图](https://handless-ui.github.io/uniQuery/#/visualization/zoom-line)等常见的图表：
 
-<img src="https://handless-ui.github.io/uniQuery/images/visualization-review.jpeg" width="700"/>
+<img src="./snipping/simple-bar.png" width="240px">
+<img src="./snipping/simple-pie.png" width="240px">
+<img src="./snipping/zoom-line.png" width="240px">
 
 ### 接口API
 

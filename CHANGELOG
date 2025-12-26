@@ -109,3 +109,9 @@ v2.2.0:
     changes:
       - 修复bug
         1、修复Calendar年月未正确显示问题
+      - 优化改造
+        1、添加types类型定义
+            * UQInputVercodeType
+      - 新增功能
+        1、除默认主题外，添加更多可选主题文件
+          （包括：red.scss）

@@ -29,10 +29,10 @@
 import { ref, onMounted } from "vue";
 
 let scrollHeight = ref(0);
-let mytitleRef = ref();
+let mytitleRef = ref<UQTitleType>();
 
 onMounted(() => {
-    scrollHeight.value = mytitleRef.value.getHeight();
+    if (mytitleRef.value) scrollHeight.value = mytitleRef.value.getHeight();
 });
 </script>
 

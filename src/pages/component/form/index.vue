@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 
-let myformRef = ref();
+let myformRef = ref<UQFormType>();
 
 // 提交参数
 let params = reactive({
@@ -49,7 +49,7 @@ let rules = {
 };
 
 let doSubmit = () => {
-	myformRef.value.submit()
+	if (myformRef.value) myformRef.value.submit()
 
 		// 如果表单合法
 		.then(() => {

@@ -7,8 +7,8 @@
     </view>
     <view class="signature-btns-container">
       <button class="btn" @click="doReset" :plain="true">重写</button>
-      <button class="btn" @click="doSave" type="primary">保存</button>
-      <button class="btn" @click="doClose" type="warn">关闭</button>
+      <button class="btn primary" @click="doSave">保存</button>
+      <button class="btn warn" @click="doClose">关闭</button>
     </view>
   </view>
 
@@ -172,11 +172,13 @@ function doClose() {
     /* #ifndef MP-WEIXIN */
     height: calc(650rpx - 10px);
     position: relative;
-     &.initial {
+
+    &.initial {
       background-color: white;
       transform-origin: left top;
       transform: translateX(-10px) translateY(10px) translateX(100vw) rotate(90deg);
     }
+
     /* #endif */
 
     /* #ifdef MP-WEIXIN */
@@ -213,6 +215,16 @@ function doClose() {
       line-height: 60rpx;
       font-size: 30rpx;
       padding: 0 20rpx;
+
+      &.primary {
+        color: white;
+        background-color: $uniquery-primary-color;
+      }
+
+      &.warn {
+        color: white;
+        background-color: $uniquery-error-color;
+      }
     }
   }
 }
@@ -221,5 +233,6 @@ function doClose() {
 .help-canvas {
   position: fixed;
 }
+
 /* #endif */
 </style>

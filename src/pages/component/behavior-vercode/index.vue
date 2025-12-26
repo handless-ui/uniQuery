@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-let myvercodeRef = ref();
+let myvercodeRef = ref<UQBehaviorVercodeType>();
 
 let doit = () => {
-  myvercodeRef.value.open().then((res: any) => {
+  if (myvercodeRef.value) myvercodeRef.value.open().then((res: any) => {
     console.log(res)
   }).catch((err: any) => {
     console.error(err);

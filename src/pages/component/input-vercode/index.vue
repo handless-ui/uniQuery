@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-let myInputVercodeRef = ref();
+let myInputVercodeRef = ref<UQInputVercodeType>();
 
 let doit = () => {
-  myInputVercodeRef.value.open({
+  if (myInputVercodeRef.value) myInputVercodeRef.value.open({
     phone: "13312341234"
   }).then((value: string) => {
     console.log(value)
