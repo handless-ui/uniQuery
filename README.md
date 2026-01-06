@@ -37,20 +37,49 @@
 
 我们提供了[日历](https://handless-ui.github.io/uniQuery/#/component/calendar)、[tabs](https://handless-ui.github.io/uniQuery/#/component/tabs)、[表单校验](https://handless-ui.github.io/uniQuery/#/component/form)等实用的组件：
 
-<img src="./snipping/behavior-vercode.png" width="240px"/>
-<img src="./snipping/calendar.png" width="240px"/>
-<img src="./snipping/input-vercode.png" width="240px"/>
-<img src="./snipping/selector.png" width="240px"/>
-<img src="./snipping/signature.png" width="400px"/>
-<img src="./snipping/tabs.png" width="240px"/>
+<table>
+    <tr>
+        <td>
+            <img src="./snipping/behavior-vercode.png" width="240px"/>
+        </td>
+        <td>
+            <img src="./snipping/calendar.png" width="240px"/>
+        </td>
+        <td>
+            <img src="./snipping/input-vercode.png" width="240px"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="./snipping/selector.png" width="240px"/>
+        </td>
+        <td>
+            <img src="./snipping/signature.png" width="400px"/>
+        </td>
+        <td>
+            <img src="./snipping/tabs.png" width="240px"/>
+        </td>
+    </tr>
+</table>
 
 ### 可视化相关
 
 使用[canvas](https://handless-ui.github.io/uniQuery/#/visualization/canvas)这个可视化基础画布，可以100%自由定制，同时我们提供了[简单柱状图](https://handless-ui.github.io/uniQuery/#/visualization/simple-bar)、[简单饼图](https://handless-ui.github.io/uniQuery/#/visualization/simple-pie)、[可缩放折线图](https://handless-ui.github.io/uniQuery/#/visualization/zoom-line)等常见的图表：
 
-<img src="./snipping/simple-bar.png" width="240px">
-<img src="./snipping/simple-pie.png" width="240px">
-<img src="./snipping/zoom-line.png" width="240px">
+
+<table>
+    <tr>
+        <td>
+            <img src="./snipping/simple-bar.png" width="240px">
+        </td>
+        <td>
+            <img src="./snipping/simple-pie.png" width="240px">
+        </td>
+        <td>
+            <img src="./snipping/zoom-line.png" width="240px">
+        </td>
+    </tr>
+</table>
 
 ### 接口API
 

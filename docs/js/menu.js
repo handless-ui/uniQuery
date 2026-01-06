@@ -71,6 +71,16 @@ if (needCache) {
     // exampleUrl = './examples/index.html';
 }
 
+var openExampleInNewWindow = function () {
+    var el = document.createElement('a');
+    el.setAttribute('href', document.getElementById('example-iframe-id').getAttribute('src'));
+    el.setAttribute('target', '_blank');
+    el.style.display = 'none';
+    document.body.appendChild(el);
+    el.click();
+    document.body.removeChild(el);
+};
+
 var contentEl = document.getElementById('content-id');
 var iframeEl = document.getElementById('example-iframe-id');
 iframeEl.setAttribute('src', exampleUrl);
