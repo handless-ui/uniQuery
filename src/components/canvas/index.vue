@@ -1,6 +1,7 @@
 <template>
     <view class="canvas-container" :id="'uni-canvas-' + uniqueid" @touchstart.stop.prevent="doTouchstart"
-        @touchmove.stop.prevent="doTouchmove" @touchend.stop.prevent="doTouchend">
+        @touchmove.stop.prevent="doTouchmove" @touchend.stop.prevent="doTouchend" @mousedown.stop.prevent="doTouchstart"
+        @mousemove.stop.prevent="doTouchmove" @mouseup.stop.prevent="doTouchend">
         <!-- #ifdef MP-WEIXIN -->
         <canvas canvas-id="painter" :style="{ width: width + 'px', height: height + 'px' }"></canvas>
         <!-- #endif -->
@@ -73,6 +74,10 @@ let doTouchmove = (event: any) => {
 
 let doTouchend = (event: any) => {
     emiteEvent(event, "end");
+};
+
+let doTouch = (event: any) => {
+    console.log(event)
 };
 
 defineExpose({
