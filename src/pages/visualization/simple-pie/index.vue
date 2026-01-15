@@ -3,6 +3,9 @@
         <view style="height: 750rpx;">
             <ui-simple-pie :data="data"></ui-simple-pie>
         </view>
+        <view style="height: 750rpx;">
+            <ui-simple-pie :data="data" :isRing="true"></ui-simple-pie>
+        </view>
     </view>
 </template>
 
