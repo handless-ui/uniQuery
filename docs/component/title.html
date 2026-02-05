@@ -54,7 +54,7 @@
     使用
 </h2>
 <pre tag="html">
-    <ui-title title="标题" backicon="/static/images/backBlack.png"></ui-title>
+    <ui-title title="标题"></ui-title>
 </pre>
 <p>
     如果你在用此组件作为标题头的时候，底部希望用
@@ -64,7 +64,7 @@
     实现局部滚动，可滚动高度如何计算？可以这样：
 </p>
 <pre tag="html">
-<ui-title ref="mytitleRef" title="标题" backicon="/static/images/backBlack.png"></ui-title>
+<ui-title ref="mytitleRef" title="标题"></ui-title>
 <scroll-view scroll-y="true" :style="{ height: scrollHeight + 'px' }"></scroll-view>
 </pre>
 <p>
@@ -145,22 +145,42 @@ scrollHeight.value = mytitleRef.value.getHeight();
         </tr>
         <tr>
             <td>
-                backicon
+                color
             </td>
             <td>
-                返回按钮图片
+                颜色
             </td>
             <td>
                 string
             </td>
             <td>
-                是
+                否
             </td>
             <td>
-
+                #000000
             </td>
             <td>
-
+                v2.3.0新增
+            </td>
+        </tr>
+        <tr>
+            <td>
+                bgColor
+            </td>
+            <td>
+                背景色
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                #ffffff
+            </td>
+            <td>
+                v2.3.0新增
             </td>
         </tr>
     </tbody>

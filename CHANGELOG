@@ -116,13 +116,32 @@ v2.2.0:
         1、除默认主题外，添加更多可选主题文件
           （包括：red.scss）
 v2.3.0:
-    date:
+    date:2026-02-05
     changes:
+      - 修复bug
+        1、修复canvas画笔部分属性设置失败问题
+          （包括：strokeStyle、lineWidth）
+        2、修复部分可视化图表在抖音小程序上的UI问题
+        3、修复 https://github.com/handless-ui/uniQuery/issues/5 提出的问题
+        4、修复popup相关组件在手机浏览器中显示不全问题
       - 优化改造
         1、可视化相关事件兼容PC端
+        2、tabs组件添加插槽
+          （ https://github.com/handless-ui/uniQuery/issues/4 ）
       - 新增功能
         1、简单饼图（SimplePie）
             * 添加交互动画
             * 添加配置项
               （包括：isRing）
             * 添加tooltip悬浮提示
+        2、简单柱状图（SimpleBar）
+            * 添加tooltip悬浮提示
+        3、标签页（Tabs）
+            * 支持插槽自定义条目 
+            * 支持自定义整体样式
+        4、选择图片（chooseImage）
+            * 添加type配置项
+        5、组件
+            * Icon 图形
+        6、可视化
+            * SingleWave 单波进度球

@@ -25,7 +25,7 @@ export default {
 import type CanvasConfigType from 'vislite/types/CanvasConfig';
 
 import { ref, getCurrentInstance } from "vue";
-import { RawCanvas } from "vislite";
+import RawCanvas from "vislite/lib/RawCanvas/index.es.js";
 
 defineProps({
     width: {
@@ -74,10 +74,6 @@ let doTouchmove = (event: any) => {
 
 let doTouchend = (event: any) => {
     emiteEvent(event, "end");
-};
-
-let doTouch = (event: any) => {
-    console.log(event)
 };
 
 defineExpose({
@@ -171,7 +167,7 @@ defineExpose({
             for (let key in configs) {
                 let value = configs[key as keyof CanvasConfigType];
 
-                if (['textAlign', 'textBaseline'].indexOf(key) > -1) {
+                if (['textAlign', 'textBaseline', 'strokeStyle', 'lineWidth'].indexOf(key) > -1) {
                     (drawPainter.getContext() as any)["set" + key[0].toUpperCase() + key.substring(1)](value);
                 } else {
                     (drawPainter as any).useConfig(key, value);

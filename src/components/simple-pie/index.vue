@@ -78,11 +78,6 @@ onMounted(() => {
                     colors = getLoopColors(pie.count);
                     for (let i = 0; i < pie.count; i++) {
 
-                        painter.config({
-                            fillStyle: colors[i],
-                            shadowBlur: pie.node[i].isHover ? 10 : 0
-                        }).fillArc(pie.cx, pie.cy, pie.node[i].radius[0], pie.node[i].radius[1], pie.node[i].beginDeg, pie.node[i].deg);
-
                         let label = pie.node[i].label;
 
                         painter.config({
@@ -97,6 +92,11 @@ onMounted(() => {
                             fontSize: 12,
                             fontWeight: 400
                         }).fillText(pie.node[i].name, label.position[0], label.position[1]);
+
+                        painter.config({
+                            fillStyle: colors[i],
+                            shadowBlur: pie.node[i].isHover ? 10 : 0
+                        }).fillArc(pie.cx, pie.cy, pie.node[i].radius[0], pie.node[i].radius[1], pie.node[i].beginDeg, pie.node[i].deg);
 
                     }
 

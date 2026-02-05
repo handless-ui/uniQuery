@@ -24,14 +24,11 @@
     },
     "requiredPrivateInfos": [
       "getLocation"
-    ],
-    "slotMultipleInstance": true
+    ]
   },
   "mp-alipay": {
     "usingComponents": true,
-    "styleIsolation": "shared",
-    "slotMultipleInstance": true,
-    "component2": true
+    "styleIsolation": "shared"
   },
   "mp-toutiao": {
     "usingComponents": true

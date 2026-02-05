@@ -130,6 +130,12 @@
 							"allowsBounceVertical": "NO"
 						}
 					}
+				},
+				{
+					"path": "icon/index",
+					"style": {
+						"navigationBarTitleText": "Icon 图形"
+					}
 				}
 			]
 		},
@@ -158,6 +164,12 @@
 					"path": "draw-board/index",
 					"style": {
 						"navigationBarTitleText": "DrawBoard 绘板"
+					}
+				},
+				{
+					"path": "single-wave/index",
+					"style": {
+						"navigationBarTitleText": "SingleWave 单波进度球"
 					}
 				}
 			]

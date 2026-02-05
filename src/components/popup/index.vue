@@ -6,7 +6,9 @@
       backgroundColor: mask ? 'rgba(0, 0, 0, 0.7)' : 'transparent',
     },
   ]" @click="doit()">
-    <slot />
+    <view v-if="lazyShow">
+      <slot />
+    </view>
   </view>
 </template>
 <script lang="ts">
@@ -28,7 +30,7 @@ let props = defineProps({
   }
 });
 
-let display = ref(false);
+let display = ref(true), lazyShow = ref(false);
 let opacity = ref(0);
 
 let emit = defineEmits(["click"]);
@@ -43,12 +45,14 @@ watch(() => props.show, (newVal) => {
     nextTick(() => {
       setTimeout(() => {
         opacity.value = 1;
-      }, 50);
+        lazyShow.value = true;
+      });
     });
   } else {
     opacity.value = 0;
     setTimeout(() => {
       display.value = false;
+      lazyShow.value = false;
     }, 300);
   }
 }, {
@@ -63,7 +67,12 @@ watch(() => props.show, (newVal) => {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+
+  // 修复popup相关组件在手机浏览器中显示不全问题
+  // 2026年1月28日 于南京
+  // height: 100vh;
+  bottom: 0;
+
   z-index: 100;
   transition-duration: 300ms;
   transition-timing-function: ease-out;

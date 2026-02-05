@@ -32,7 +32,7 @@ export default function (painter: CanvasType, coordinate: BarResultType['coordin
         let distLen = coordinate.width / (coordinate.xAxis.data.length - 1);
 
         painter.config({
-            strokeStyle: "#aaa",
+            strokeStyle: "#aaaaaa",
             fillStyle: "black",
             textAlign: "center",
             textBaseline: "top",
@@ -78,7 +78,7 @@ export default function (painter: CanvasType, coordinate: BarResultType['coordin
         let distLen = coordinate.height / (coordinate.yAxis.data.length - 1);
 
         painter.config({
-            strokeStyle: "#aaa",
+            strokeStyle: "#aaaaaa",
             fillStyle: "black",
             textAlign: "right",
             textBaseline: "middle",

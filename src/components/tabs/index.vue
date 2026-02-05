@@ -1,19 +1,21 @@
 <template>
-  <view class="tabs-container">
+  <view class="tabs-container" :style="customStyle">
     <!-- 列表滚动内容 -->
     <scroll-view scroll-with-animation :show-scrollbar="false" :scroll-left="scrollLeft" :scroll-x="true"
       class="tabs-view">
       <!-- 一个个条目 -->
       <view @click="doit(index)" :class="'tabs-view-item' + (current == index ? ' active' : '')" :style="[{
-      color: current == index ? activeColor : color
-    }]" v-for="(item, index) in list" :key="index">
-        <!-- 默认内容 -->
-        <view class="content">
-          {{ item }}
-          <view class="line" :style="[{
-      backgroundColor: activeColor
-    }]"></view>
-        </view>
+        color: current == index ? activeColor : color
+      }]" v-for="(item, index) in list" :key="index">
+        <slot :value="item" :index="index" :isActive="current == index" :activeColor="activeColor" :color="color">
+          <!-- 默认内容 -->
+          <view class="content">
+            {{ item }}
+            <view class="line" :style="[{
+              backgroundColor: activeColor
+            }]"></view>
+          </view>
+        </slot>
       </view>
     </scroll-view>
   </view>
@@ -49,6 +51,10 @@ let props = defineProps({
   color: {
     type: String,
     default: ""
+  },
+  customStyle: {
+    type: String,
+    default: "width: 100%;"
   }
 });
 
@@ -78,20 +84,22 @@ let doit = (index: number) => {
 }
 
 onMounted(() => {
-  const query = uni.createSelectorQuery().in(_this);
+  setTimeout(() => {
+    const query = uni.createSelectorQuery().in(_this);
 
-  query.selectAll(".tabs-view").boundingClientRect((rects: any) => {
-    tabsWidth.value = rects[0].width;
-  });
+    query.selectAll(".tabs-view").boundingClientRect((rects: any) => {
+      tabsWidth.value = rects[0].width;
+    });
 
-  query
-    .selectAll(".tabs-view-item")
-    .boundingClientRect((rects) => {
-      nodeInfo.value = rects as any;
+    query
+      .selectAll(".tabs-view-item")
+      .boundingClientRect((rects) => {
+        nodeInfo.value = rects as any;
 
-      doit(props.index);
-    })
-    .exec();
+        doit(props.index);
+      })
+      .exec();
+  }, 200);
 });
 </script>
 
@@ -123,6 +131,7 @@ onMounted(() => {
     &.active {
 
       color: $uniquery-primary-color;
+
       &>.content {
         &>.line {
           width: 40rpx;

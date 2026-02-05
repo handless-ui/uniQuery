@@ -49,7 +49,9 @@ interface Uni {
         /**
          * 选择图片
          */
-        chooseImage(): Promise<Array<string>>
+        chooseImage(options?: {
+            type?: "default" | "base64"
+        }): Promise<Array<string>>
 
     }
 }

@@ -149,7 +149,6 @@ defineExpose({
     border-radius: 30rpx 30rpx 0 0;
     padding: 40rpx 30rpx;
     box-sizing: border-box;
-    position: absolute;
     transition-duration: 500ms;
     transition-timing-function: ease-out;
     transition-property: bottom;

@@ -219,7 +219,7 @@ onMounted(() => {
                             // 边界文字
                             if (isMoving) {
                                 painter.config({
-                                    fillStyle: "#aaa",
+                                    fillStyle: "#aaaaaa",
                                     textAlign: "right",
                                     fontSize: 10
                                 })

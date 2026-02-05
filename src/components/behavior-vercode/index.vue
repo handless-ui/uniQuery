@@ -9,7 +9,7 @@
 				安全验证
 			</view>
 			<view class="img">
-				<image class="icon" :src="bgicon"></image>
+				<image class="icon" :src="bgIcon"></image>
 				<image class="icon" :src="shadowSrc"></image>
 				<image :style="{ left: (left - val) + 'px' }" class="icon" :src="boxSrc"></image>
 				<view class="icon no-show">
@@ -33,7 +33,7 @@
 				<!-- 滑动的轨迹和块 -->
 				<movable-area class="drag-area" v-if='helpInit'>
 					<movable-view direction='horizontal' @change='doDrag' class="drag-btn">
-						<image class="icon" :src="righticon"></image>
+						<image class="icon" :src="rightIcon"></image>
 					</movable-view>
 				</movable-area>
 
@@ -60,17 +60,17 @@ let width = uni.upx2px(590);
 let height = uni.upx2px(222);
 
 let props = defineProps({
-	bgicon: {
+	bgIcon: {
 		type: String,
 		required: true
 	},
-	righticon: {
+	rightIcon: {
 		type: String,
 		required: true
 	}
 });
 
-let righticon = props.righticon;
+let rightIcon = props.rightIcon;
 
 let show = ref(false);
 let bottom = ref("-100vh");
@@ -145,7 +145,7 @@ let init = () => {
 			clipPath(boxPainter, p[0], p[1]);
 			boxPainter.clip()
 
-				.drawImage(props.bgicon, 0, 0, width, height).then(() => {
+				.drawImage(props.bgIcon, 0, 0, width, height).then(() => {
 					boxPainter.restore()
 						.config({
 							strokeStyle: "white"

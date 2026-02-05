@@ -14,7 +14,9 @@ let imgs = ref<Array<string>>([]);
 
 let doit = () => {
 	uni.$uniQuery
-		.chooseImage()
+		.chooseImage({
+			// type:"default"
+		})
 		.then((res) => {
 			console.log(res);
 			imgs.value = res;

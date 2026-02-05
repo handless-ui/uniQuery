@@ -64,9 +64,70 @@ uni.$uniQuery.chooseImage().then(res=> {
     其中，res的数据格式如下：
 </p>
 <pre tag="javascript">
-// 数组的条目是base64图片地址
+// 数组的条目就是图片地址
 Array&lt;string&gt;
 </pre>
+<h3>
+    配置项
+</h3>
+<p>
+    其中chooseImage()方法还支持传递参数，比如图片地址类型：
+</p>
+<pre tag="javascript">
+uni.$uniQuery.chooseImage({
+    type: "base64"
+});
+</pre>
+<p>
+    具体可配置项如下：
+</p>
+<table>
+    <thead>
+        <tr>
+            <td>
+                属性
+            </td>
+            <td>
+                说明
+            </td>
+            <td>
+                类型
+            </td>
+            <td>
+                是否必输？
+            </td>
+            <td>
+                默认值
+            </td>
+            <td>
+                备注
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                type
+            </td>
+            <td>
+                图片地址类型
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                否
+            </td>
+            <td>
+                "default"
+            </td>
+            <td>
+                可选值："default"默认类型、"base64"使用Base64地址（仅H5、微信公众号、微信小程序支持）
+                <br />v2.3.0新增
+            </td>
+        </tr>
+    </tbody>
+</table>
 <h2>
     权限相关
 </h2>

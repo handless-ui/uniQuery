@@ -10,7 +10,7 @@
 
         <view class="example-title"> 多列： </view>
         <view class="example-btnInput" @click="doit2()">
-            <input readonly type="text" :value="value2?.label.join(' ')" placeholder="请选择科目" />
+            <input readonly type="text" :value="value2?.label.join(' ')" placeholder="请选择季度" />
             <button>选择</button>
         </view>
 

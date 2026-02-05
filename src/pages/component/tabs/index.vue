@@ -8,6 +8,15 @@
 
     <view class="example-title"> 改变颜色： </view>
     <ui-tabs :list="list" :index="3" @change="change" color="pink" active-color="red"></ui-tabs>
+
+    <view class="example-title"> 使用插槽： </view>
+    <ui-tabs :list="list" @change="change" color="pink" active-color="red">
+      <template v-slot:default='{ value, index, isActive, activeColor, color }'>
+        <view :style="{
+          border: '1px solid ' + (isActive ? activeColor : color)
+        }" style="padding:0 10rpx;">{{ value }}</view>
+      </template>
+    </ui-tabs>
   </view>
 </template>
 

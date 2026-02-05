@@ -1,8 +1,12 @@
 <template>
   <view class="container">
+    
     <!-- 功能组件 -->
     <view class="btn" @click="goto('form')">Form 表单校验</view>
     <view class="btn" @click="goto('popup')">Popup 弹出层</view>
+
+    <!-- 基础组件 -->
+    <view class="btn" @click="goto('icon')">Icon 图形</view>
 
     <!-- UI组件 -->
     <view class="btn" @click="goto('tabs')">Tabs 标签页</view>
@@ -16,7 +20,6 @@
     <view class="btn" @click="goto('title')">Title 标题头</view>
     <view class="btn" @click="goto('input-vercode')">InputVercode 输入验证码</view>
     <view class="btn" @click="goto('signature')">Signature 签名</view>
-
 
   </view>
 </template>

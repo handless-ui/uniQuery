@@ -14,6 +14,10 @@
       ZoomLine 可缩放折线图
     </view>
 
+    <view class="btn" @click="goto('single-wave')">
+      SingleWave 单波进度球
+    </view>
+
     <!-- 功能组件 -->
     <view class="btn" @click="goto('draw-board')">
       DrawBoard 绘板

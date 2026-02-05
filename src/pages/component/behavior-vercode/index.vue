@@ -1,7 +1,7 @@
 <template>
   <view class="example-container">
-    <ui-behavior-vercode ref="myvercodeRef" bgicon="/static/images/nanjing.jpeg"
-      righticon="/static/images/toRight.png"></ui-behavior-vercode>
+    <ui-behavior-vercode ref="myvercodeRef" bg-icon="/static/images/nanjing.jpeg"
+      right-icon="/static/images/toRight.png"></ui-behavior-vercode>
     <button class="example-btnbottom" type="primary" @click="doit">
       点击我试试
     </button>
