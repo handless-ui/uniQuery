@@ -536,17 +536,18 @@ a.to-editor-btn {
     margin: 30px 0 40px 0;
     display: inline-block;
     font-size: 16px;
-    background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-color);
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+    border: 1px solid var(--primary-color);
 }
 
 a.to-editor-btn:hover {
-    background-color: #0d5bdd;
+    background-color: var(--primary-color);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
 }
