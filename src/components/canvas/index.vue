@@ -78,16 +78,16 @@ let doTouchend = (event: any) => {
 
 defineExpose({
     fetch() {
-        let painterid = '';
+        let painterid = '', painter;
 
         // #ifdef MP-WEIXIN
         painterid = 'painter';
+        painter = uni.createCanvasContext(painterid, instance);
         // #endif
         // #ifndef MP-WEIXIN
         painterid = 'painter-' + uniqueid.value;
+        painter = uni.createCanvasContext(painterid);
         // #endif
-
-        let painter = uni.createCanvasContext(painterid, instance);
 
         // #ifdef MP-ALIPAY
         if (!hadFetch) painter.scale(2, 2);

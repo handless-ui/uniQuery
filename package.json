@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "pointin": "^0.1.2",
-    "vislite": "^1.9.0"
+    "vislite": "^1.9.1"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.4.8",
@@ -64,7 +64,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-4080720251210001",
     "@vue/runtime-core": "^3.4.21",
     "@vue/tsconfig": "^0.5.1",
-    "oipage": "^1.8.1",
+    "oipage": "^1.9.0",
     "sass": "^1.71.0",
     "typescript": "^4.9.4",
     "vite": "^5.2.8",

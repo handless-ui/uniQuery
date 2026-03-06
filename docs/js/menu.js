@@ -1,4 +1,4 @@
-document.getElementById('version').innerText = "（Vue3.js）版本：v" + window.uniQuery_system.version;
+document.getElementById('version').innerText = "（Vue3.js）当前组件库版本：v" + window.uniQuery_system.version;
 
 // 生成底部统一内容
 function getFooterTemplate(path) {
